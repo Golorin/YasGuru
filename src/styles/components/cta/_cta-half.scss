@@ -1,0 +1,10 @@
+.cta-full {
+  @include flexbox;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+  @include align-items(center);
+  background: $section-background;
+  margin: 0 auto;
+  max-width: 1200px;
+}

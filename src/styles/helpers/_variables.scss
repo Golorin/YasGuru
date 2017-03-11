@@ -1,0 +1,40 @@
+/* -------------------------------------------
+-------------------------------------------
+---------- Variable Styles ---------------------------------
+-------------------------------------------
+*/
+
+
+$primary-color: #f16521;
+$alt-color: #f3c716;
+$gray: #3f3f42;
+$primary-dark: darken($primary-color, 15%);
+$alt-dark: darken($alt-color, 15%);
+$section-background: white;
+
+$header-font-stack: 'Merriweather', serif;
+$text-font-stack: 'Source Sans Pro', sans-serif;
+$text-font-stack-alt: 'Merriweather', sans-serif;
+
+$navbar-height: 40px;
+
+$base-height: 35px;
+$line-height: 1.15em;
+
+
+// Button variables
+
+$hover-font-color: white;
+$hover-background-color: $primary-dark;
+
+// Shadow Styles
+
+$box-shadow: 0px 8px 20px -8px rgba(0, 0, 0, 0.25);
+
+// Media Queries
+
+$break-tiny: 360px;
+$break-small: 480px;
+$break-medium: 769px;
+$break-large: 1000px;
+$break-hd: 1200px;

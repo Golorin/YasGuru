@@ -1,0 +1,29 @@
+/* -------------------------------------------
+-------------------------------------------
+---------- CTA Email Signup Styles ---------------------------------
+-------------------------------------------
+*/
+
+@import "helpers/_flexboxMixins";
+@import '../helpers/variables';
+
+section.cta-email-signup {
+  background: white;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  @include flexbox;
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include align-items(flex-start);
+  @media screen and (min-width: $break-medium) {
+    @include justify-content(flex-start);
+  }
+  .cta-email-signup-container {
+    @media screen and (min-width: $break-medium) {
+      max-width: 450px;
+    }
+    .email-signup {
+      // margin: 10px 0px;
+    }
+  }
+}

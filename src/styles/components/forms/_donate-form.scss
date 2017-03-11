@@ -1,0 +1,74 @@
+.donate-form {
+  @include flexbox;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+  @include align-content(stretch);
+  margin: 0px 0px;
+  @include e('span') {
+    height: 55px;
+    line-height: 1.2em;
+    color: black;
+    font-weight: bold;
+    background: white;
+    padding: 0;
+    border: none;
+    @include m('before') {
+      padding: 0px 15px;
+    }
+    @include m('isHalf') {
+      width: 50%;
+    }
+    @include m('hasBorder') {
+      border: 2px solid black;
+    }
+  }
+  @include e('input') {
+    height: 55px;
+    line-height: 1.2em;
+    max-width: 150px;
+    font-size: 1.2em;
+    background: none;
+    font-style: italic;
+    font-weight: bold;
+    color: $primary-color;
+    padding: 0px 5px;
+    border: none;
+    &:focus { outline: none; }
+    @include m('small') {
+      max-width: 75px;
+    }
+  }
+  @include e('button') {
+    height: 55px;
+    line-height: 1.2em;
+    padding: 0px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: -2px;
+    border: none;
+    background-color: $alt-color;
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+      cursor: pointer;
+    }
+
+    @include m('hasPrimaryColor') {
+      background: $primary-color;
+    }
+
+    @include m('hasAltColor') {
+      background: $alt-color;
+      color: black;
+    }
+
+    @include m('isHalf') {
+      width: 50%;
+    }
+
+    @include m('hasBorder') {
+      border: 2px solid black;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.modal {
+  position: fixed;
+  visibility: hidden;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 500px;
+  background: #fff;
+  z-index: 10;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: $box-shadow;
+  border: 2px solid black;
+
+  @include e('header') {
+    @extend .header-text;
+    font-size: 1.2em;
+    background: lighten($alt-color, 5%);
+    padding: 15px 15px;
+    text-align: center;
+    line-height: $line-height;
+  }
+
+  @include e('container') {
+    height: 100%;
+    width: 100%;
+    padding: 20px 20px;
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    @include align-items(center);
+  }
+
+  @include e('message') {
+    margin-bottom: 10px;
+    line-height: $line-height;
+  }
+
+  @include e('button') {
+    margin: 5px;
+  }
+
+}

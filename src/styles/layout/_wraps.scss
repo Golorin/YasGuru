@@ -1,0 +1,37 @@
+/* -------------------------------------------
+-------------------------------------------
+---------- Wrap Styles ---------------------------------
+-------------------------------------------
+*/
+@import '../helpers/flexboxMixins';
+@import '../helpers/_variables';
+
+.cta-wrap {
+    @include flexbox;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(stretch);
+    // box-sizing: border-box;
+    margin: 0 auto;
+
+    .wrap-item {
+        flex-basis: 100%;
+        @media screen and (min-width: $break-medium) {
+            flex-basis: 50%;
+        }
+    }
+
+    @include e ('item') {
+        @include flexbox;
+        @include flex-direction(column) @include flex-wrap(wrap);
+        @include align-items(stretch);
+        flex-basis: 100%;
+        @media screen and (min-width: $break-medium) {
+            flex-basis: 50%;
+        }
+
+        @include m ('orange') {
+            background: $primary-color;
+        }
+    }
+}

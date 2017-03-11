@@ -1,0 +1,124 @@
+.footer {
+  background: white;
+  padding: 15px 6.48%;
+  border-top: 1.5px solid rgba(0,0,0,0.075);
+  .footer-wrap {
+    @include flexbox;
+    @include flex-direction(column);
+    @media screen and (min-width: $break-medium) {
+      padding: 80px 80px 20px 80px;
+    }
+    .footer-main-content {
+      @include flexbox;
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @media screen and (min-width: $break-medium) {
+        @include flexbox;
+        @include flex-direction(row);
+        @include justify-content(center);
+      }
+    }
+  }
+}
+
+.footer-content {
+  flex-grow: 1;
+  margin: 0 10px;
+  @media screen and (min-width: 480px) {
+    flex-grow: 1;
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(center);
+  }
+  .footer-content-title {
+    color: black;
+    font-size: 1.0em;
+    font-weight: bold;
+    margin: 20px 0px;
+  }
+  ul {
+    @media screen and (min-width: $break-medium) {
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(center);
+    }
+    li {
+      position: relative;
+      margin: 5px 0px;
+      width: 100px;
+      height: 30px;
+      a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 30px;
+        &:hover {
+          background: #f1f1f1;
+        }
+        @media screen and (min-width: $break-medium) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.footer-page-links {
+
+}
+
+.footer-contact-container {
+  margin-top: 40px;
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  .footer-contact {
+    font-size: 0.85em;
+    text-align: center;
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    @include align-content(center);
+    .footer-address {
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .footer-sign-off {
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(center);
+    font-size: 0.85em;
+    margin-top: 40px;
+    @media screen and (min-width: 480px) {
+      @include flexbox;
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+    }
+    p {
+      margin: 0 0;
+    }
+    i {
+      margin: 0px 5px;
+    }
+  }
+}
+
+.footer a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+.footer-divider {
+  display: none;
+  @media screen and (min-width: 480px) {
+    margin: 0px 10px;
+    display: initial;
+  }
+}

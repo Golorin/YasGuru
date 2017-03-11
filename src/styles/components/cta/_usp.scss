@@ -1,0 +1,51 @@
+.usp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  // background: #ccc;
+  margin: 40px 10px;
+
+  @include e('card') {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 300px;
+    text-align: center;
+    margin: 10px 10px;
+    border: 2px solid #f1f1f1;
+  }
+
+  i {
+    color: #f17f2a;
+  }
+
+  @include e('image') {
+    background: white;
+    height: 125px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include e('content') {
+    padding: 20px 20px;
+    background: #f1f1f1;
+    min-height: 170px;
+  }
+
+  @include e('title') {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  @include e('description') {
+    font-size: 0.85em;
+  }
+}

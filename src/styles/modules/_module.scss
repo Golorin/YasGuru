@@ -1,0 +1,104 @@
+.module {
+  float: left;
+  // background: #eee;
+  width: 100%;
+  padding: 40px 6.48%;
+  &--hasNoPadding {
+    padding: 0px 0px !important;
+  }
+  @include m('hasNoBottomPadding') {
+    padding-bottom: 0px;
+  }
+  @include m('hasNoTopPadding') {
+    padding-top: 0px;
+  }
+
+  @include m('hasNoSidePadding') {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  @include m('isAltColor') {
+    background: $alt-color;
+  }
+  &--hasNoBottomPadding {
+    padding-bottom: 0;
+  }
+  &--isStacked {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &--isFlexCenter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  @include m('isFlexStretch') {
+    @include flexbox;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(stretch);
+  }
+  &__container {
+    padding: 20px 6.48%;
+
+    @media screen and (min-width: $break-medium) {
+      padding: 40px 2.5%;
+    }
+
+    @media screen and (min-width: $break-large) {
+      padding: 40px 40px;
+    }
+
+    @include m('isHalf') {
+      @media screen and (min-width: 768px) {
+        width: 50%;
+      }
+    }
+
+    @include m('isOneThird') {
+      @media screen and (min-width: 768px) {
+        margin: 5px 10px;
+        flex-basis: 30%;
+        flex-grow: 2;
+        padding: 20px 30px;
+      }
+    }
+
+    @include m('isTwoThird') {
+      @media screen and (min-width: 768px) {
+        margin: 5px 10px;
+        flex-basis: 60%;
+        flex-grow: 3;
+        padding: 20px 30px;
+      }
+    }
+  }
+
+  @include e('firstItem') {
+    padding: 0;
+    @media screen and (min-width: $break-medium) {
+      max-width: 500px;
+      float: right;
+    }
+  }
+  @include e('lastItem') {
+    padding: 0;
+    @media screen and (min-width: $break-medium) {
+      float: left;
+      max-width: 500px;
+    }
+  }
+
+  @include e('image') {
+    max-height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+  }
+
+}

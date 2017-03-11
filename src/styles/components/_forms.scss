@@ -1,0 +1,505 @@
+/* -------------------------------------------
+-------------------------------------------
+---------- Form Styles ---------------------------------
+-------------------------------------------
+*/
+
+@import '../helpers/flexboxMixins';
+@import '../base/_typography';
+@import '../helpers/_variables';
+
+@import './forms/_donate-form';
+@import './forms/_email-form';
+
+// .email-signup {
+//   max-width: 500px;
+//   @include flexbox;
+//   @include flex-direction(row);
+//   @include flex-wrap(wrap);
+//   input {
+//     border-radius: 0px;
+//     font-size: 1em;
+//     flex-basis: 30%;
+//     padding: 10px 5%;
+//     border: 1px solid rgba(0,0,0,0.25);
+//     flex-grow: 4;
+//     @media screen and (min-width: $break-small) {
+//       flex-basis: 40%;
+//     }
+//   }
+//   button {
+//     font-size: 0.85em;
+//     margin-left: -2px;
+//     padding: 10px 5%;
+//     background: $primary-color;
+//     color: white;
+//     border: 1px solid $primary-color;
+//     flex-grow: 1;
+//     @media screen and (min-width: $break-small) {
+//       flex-basis: 20%;
+//     }
+//   }
+//
+// }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 1000px;
+
+  &--isInline {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  &--isStacked {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  &__container {
+    &--isHalf {
+      width: 50%;
+      flex-basis: 200px;
+      flex-grow: 1;
+      @media screen and (min-width: 480px) {
+        padding: 10px 25px;
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.75em;
+    &--large {
+      font-size: 1.6em;
+    }
+    @include m('hasAltBackground') {
+      background: #f3c706;
+      padding: 15px;
+      text-align: center;
+    }
+  }
+
+  &__subheading {
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 1em;
+  }
+
+  &__signature {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  &__inputs {
+    @include flexbox;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+  }
+
+  &__input {
+    height: 40px;
+    width: 50%;
+    max-width: 500px;
+    flex-basis: 100px;
+    flex-grow: 1;
+    font-size: 1em;
+    color: black;
+    border: 1px solid black;
+    padding: 0px 10px;
+    margin: 0px 2.5px 5px 0px;
+    border: 1px solid rgba(0,0,0,0.25);
+
+    @include m('noBorder') {
+      border: 0px;
+    }
+  }
+
+  @include e('submit') {
+    height: 40px;
+    font-size: 0.85em;
+    padding: 0px 20px;
+    width: 100%;
+    flex-grow: 1;
+    background: #333;
+    color: white;
+    border: none;
+    font-weight: bold;
+    &--small {
+      @media screen and (min-width: 480px) {
+        max-width: 100px;
+      }
+    }
+    @include m('hasPrimaryColor') {
+      background: $primary-color;
+    }
+
+    @include m('hasAltColor') {
+      background: $alt-color;
+      color: black;
+    }
+
+    @include m('isHalf') {
+      width: 50%;
+    }
+  }
+}
+
+div {
+  font-family: 'Helvetica', sans-serif;
+  box-sizing: border-box;
+}
+
+// Container
+.container {
+  padding: 10px 10px;
+  background: #f1f1f1;
+  position: relative;
+}
+
+//
+
+// inputs
+
+.input {
+  height: $base-height;
+  font-size: 1em;
+  padding: 0px 10px;
+  flex-basis: 100px;
+  flex-grow: 1;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  &--hasLabel {
+    padding: 0px 30px;
+    margin-bottom: 0px;
+  }
+
+  &--border {
+    border: 1px solid black;
+  }
+
+  &--border-heavy {
+    border: 2px solid black;
+
+    &:focus {
+      border: 2px solid #369ff4;
+    }
+  }
+
+  &--noMargin {
+    margin-right: 0px;
+  }
+
+  &:focus {
+    border: 1px solid #369ff4;
+  }
+
+  &--large {
+    height: $base-height * 1.2;
+
+  }
+
+
+  @include e('row') {
+    display: inline-block;
+    position: relative;
+    flex-basis: 150px;
+    flex-grow: 2;
+    margin-bottom: 5px;
+    input {
+      width: 100%;
+    }
+
+    @include m('flex') {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 250px;
+    margin: 5px 5px;
+
+    &--border {
+      border: 1px solid #999;
+    }
+    .input {
+      width: 75px;
+      margin-bottom: 0px;
+      border: none;
+      border-left: 1px solid black;
+      &__label {
+        padding: 0px 10px;
+      }
+    }
+  }
+
+  &__label {
+    line-height: 0px;
+    width: 100px;
+    flex-basis: 100px;
+    background: #f1f1f1;
+    color: black;
+
+    &--before {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     left: 15px;
+     color: black
+    }
+
+    &--after {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     right: 15px;
+     color: black
+    }
+  }
+}
+
+.form-b {
+  padding: 20px 20px;
+  margin: 0px 6.48%;
+  max-width: 600px;
+  background: white;
+  @media screen and (min-width: $break-medium) {
+    margin: 10px 5px;
+  }
+
+  &--small {
+    max-width: 400px;
+  }
+
+  &--primary {
+    background: $primary-color;
+  }
+
+  &--alt {
+    background: $alt-color;
+  }
+
+  &--gray {
+    background: #f1f1f1;
+  }
+
+  &--border {
+    border: 2px solid black;
+  }
+
+  &--shadow {
+    box-shadow: 0px 8px 20px -8px rgba(0, 0, 0, 0.25);
+  }
+
+  &--fill {
+    width: 100%;
+    max-width: none;
+    padding: 0px 0px;
+    margin: 0px;
+    @media screen and (min-width: $break-medium) {
+      padding: 0px 0px;
+      margin: 0px;
+    }
+  }
+
+  &--full {
+    max-width: 100%;
+    margin: 0px 6.48%;
+    @media screen and (min-width: $break-medium) {
+      margin: 0px 20px;
+    }
+  }
+
+  @include e('header') {
+    @extend .header-text;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+    line-height: $line-height;
+
+    @include m('alt') {
+      background: $alt-color;
+      padding: 15px;
+      color: black;
+    }
+
+    @include m('underline') {
+      border-bottom: 2px solid black;
+    }
+
+    @include m('full') {
+      margin: 0px -20px;
+      margin-top: -20px;
+      padding: 20px 20px;
+    }
+  }
+
+  @include e('subheading') {
+    font-family: 'Source Sans Pro', 'Helvetica', sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    margin: 10px 0px;
+    color: black;
+    line-height: $line-height;
+    &--bold {
+      font-weight: bold;
+    }
+  }
+
+  @include e('container') {
+    margin: 0px;
+
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    > .form-b__inputs {
+      flex-basis: 100px;
+    }
+
+    button {
+      display: inline-block;
+      flex-grow: 1;
+      padding: 0 30px;
+      flex-basis: 30px;
+      margin-bottom: 5px;
+      border-left: none;
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    border: 1px solid rgba(0,0,0,0.15);
+    margin: 0px 5px 5px 0px;
+
+    &--nested {
+      flex-basis: 200px;
+    }
+
+    .input {
+      border: none;
+      margin-bottom: 0px;
+      margin-right: 0px;
+    }
+  }
+
+  &__label {
+    font-size: 0.85em;
+    width: auto;
+    min-width: 50px;
+    background: #f1f1f1;
+    height: $base-height;
+    line-height: $base-height;
+    padding: 0px 15px;
+    border-right: 1px solid black;
+  }
+
+  &__input {
+    width: 50px;
+    flex-basis: $base-height;
+  }
+
+  &__submit {
+    font-size: 1em;
+    height: $base-height;
+    background: #ccc;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+      background: darken(#ccc, 10%);
+    }
+
+    @include m('large') {
+      height: $base-height * 1.2;
+    }
+
+    @include m('primary') {
+      background: $primary-color;
+      color: white;
+      &:hover {
+        background: lighten($primary-color, 10%);
+        color: white;
+      }
+    }
+
+    @include m('alt') {
+      background: $alt-color;
+      color: black;
+      &:hover {
+        background: lighten($primary-color, 10%);
+        color: black;
+      }
+    }
+  }
+}
+
+form {
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-content(center);
+  .form-row {
+    flex-basis: 100%;
+    @include flexbox;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(center);
+    @include align-content(center);
+    @media screen and (min-width: 480px) {
+      @include justify-content(space-between);
+    }
+    label {
+      flex-basis: 100%;
+      @media screen and (min-width: 480px) {
+        flex-basis: 50%;
+      }
+    }
+    input {
+      font-size: 1em;
+      font-weight: 600;
+      flex-basis: auto;
+      padding:10px 10px;
+      margin: 10px 0px;
+      border: 1px solid black;
+      &[data-stripe='amount'] {
+        @media screen and (min-width: 480px) {
+          max-width: 100px !important;
+        }
+      }
+    }
+    .cc-exp {
+      max-width: 4em !important;
+    }
+    .cc-exp-divider {
+      margin: 0px 10px;
+    }
+  }
+  input[type='submit'] {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+}

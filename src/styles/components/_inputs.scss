@@ -1,0 +1,131 @@
+.input {
+    height: 40px;
+    // width: 50%;
+    max-width: 500px;
+    flex-basis: 100px;
+    font-size: 1em;
+    flex-grow: 1;
+    color: black;
+    padding: 0 10px;
+    margin: 0 2.5px 2.5px 0;
+    border: 1px solid rgba(0,0,0,0.25);
+    @include placeholder {
+        font-style: italic;
+        font-weight: normal;
+        // font-size: 0.85em;
+    }
+
+    @include m ('medium') {
+        height: 40;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    @include m ('large') {
+        @media screen and (min-width: $break-medium) {
+            height: 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 0 30px;
+        }
+    }
+
+    @include m ('black') {
+        border: 2px solid black;
+    }
+}
+
+// Mixin for elements
+
+$input-border: #f1f1f1;
+
+.input {
+
+  @include e('item') {
+    font-size: 1em;
+    font-weight: bold;
+    color: $primary-color;
+    height: 40px;
+    line-height: 40px;
+    padding: 10px 10px;
+    width: 75px;
+    outline: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: $input-border;
+    border-right: $input-border;
+
+    &::selection {
+      background-color: #CCE2FF;
+    }
+  }
+
+  @include e('wrapper') {
+    display: inline-block;
+  }
+
+  @include e('container') {
+    border: $input-border;
+    @include flexbox;
+    @include flex-direction(row);
+    background: #f1f1f1;
+    height: 40px;
+  }
+
+  @include e('label') {
+    padding: 5px 10px;
+    color: black;
+    font-weight: normal;
+    font-size: 0.85em;
+    line-height: 40px;
+
+    @include m('before') {
+      border-right: $input-border;
+    }
+
+    @include m('after') {
+      border-left: $input-border;
+    }
+  }
+
+  @include e('submit') {
+    display: inline-block;
+    height: 40px;
+    padding: 10px 30px;
+    @include m('donate') {
+      padding: 10px 30px;
+      background: $alt-color;
+      text-decoration: none;
+      color: black;
+      font-size: 1em;
+      font-weight: 400;
+      &:hover {
+        background: lighten($alt-color, 10%);
+        color: lighten(black, 10%);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.select {
+  @include e('container') {
+    @include flexbox;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flexbox;
+  }
+
+  @include e('title') {
+    margin: 0px 10px 10px 0px;
+    flex-basis: 50%;
+    font-size: 0.9em;
+  }
+
+  @include e('item') {
+    background: #f1f1f1;
+    flex-basis: 50%;
+    height: 30px;
+    margin: 0px 10px 10px 0px;
+  }
+}

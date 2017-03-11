@@ -1,0 +1,134 @@
+@import './cta/_cta-half';
+@import './cta/_usp';
+
+.cta-b {
+  background-color: #f16521;
+  width: 100%;
+  min-height: 400px;
+  padding: 60px 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  @include m('fullScreen') {
+    height: 100vh;
+    width: 100%;
+  }
+
+  @include e('object') {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    img {
+      object-fit: cover;
+      height: inherit;
+      width: inherit;
+    }
+  }
+
+  @include e('container') {
+    border-radius: 4px;
+    padding: 10px 10px;
+    border: 4px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 10px;
+
+    @media screen and (min-width: 700px) {
+      width: 700px;
+      height: 300px;
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 950px;
+      height: 400px;
+    }
+
+    @include m('half') {
+      position: relative;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 20px 20px;
+      flex-basis: 500px;
+      flex-grow: 1;
+      text-decoration: none;
+      @media screen and (min-width: 700px) {
+        padding: 20px 6.48%;
+        height: 100%;
+        flex-basis: 50%;
+        width: 50%;
+      }
+    }
+  }
+
+  @include e('heading') {
+    padding: 1em 1em;
+    margin: 1em 1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  @include e('headline') {
+    color: black;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    text-align: center;
+
+    @include m('alone') {
+      margin-bottom: 0;
+    }
+  }
+
+  @include e('description') {
+    color: black;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+
+  @include e('button') {
+    text-decoration: none;
+    line-height: 1.15em;
+    font-size: 0.9em;
+    font-weight: bold;
+    min-width: 150px;
+    padding: 10px 30px;
+    display: inline-block;
+    margin: 1em auto;
+    background: #f3c706;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 4px 50px -10px rgba(243, 199, 6, 1);
+    }
+  }
+
+  @include e('image') {
+    color: white;
+  }
+
+  @include e('icon') {
+    z-index: 2;
+  }
+}

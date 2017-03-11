@@ -1,0 +1,26 @@
+/* -------------------------------------------
+-------------------------------------------
+---------- CTA Volunteer Signup Styles ---------------------------------
+-------------------------------------------
+*/
+
+@import "helpers/_flexboxMixins";
+@import '../helpers/variables';
+
+section.cta-volunteer {
+  background-color: $alt-color;
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @media screen and (min-width: $break-medium) {
+    @include justify-content(center);
+  }
+  .cta-volunteer-container {
+    .heading {
+      color: black;
+    }
+    @media screen and (min-width: $break-medium) {
+      max-width: 450px;
+    }
+  }
+}

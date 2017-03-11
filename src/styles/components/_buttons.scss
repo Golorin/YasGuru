@@ -1,0 +1,196 @@
+@import '../helpers/_variables';
+
+
+.btn {
+  display: block;
+  height: $base-height;
+  padding: 0 40px;
+  line-height: $base-height;
+  // margin: 5px 5px;
+  cursor: pointer;
+  font-size: 0.85em;
+  // color: white;
+  // background: $primary-color;
+  border: 0px solid transparent;
+  text-decoration: none;
+  text-align: center;
+
+  // &:hover {
+  //   color: black;
+  //   background: $alt-color;
+  //   // margin: 5px 5px;
+  // }
+
+  @include m('inline') {
+    display: inline-block;
+  }
+
+  @include m('alt') {
+    background: $alt-color;
+    color: black;
+    &:hover {
+      color: black;
+      background: lighten($alt-color, 10%);
+    }
+  }
+
+  @include m('border') {
+    border: 2px solid black;
+    &:hover {
+      border: 2px solid black;
+    }
+  }
+
+  &--small {
+    height: 25px;
+    line-height: 25px;
+    font-size: 0.85em;
+  }
+
+  &--large {
+    height: 45px;
+    line-height: 45px;
+  }
+
+  &--x-large {
+    height: 60px;
+    line-height: 60px;
+    padding: 0px 60px;
+  }
+
+  @include m('noMargin') {
+    margin: 0px;
+    &:hover {
+      margin: 0px;
+    }
+  }
+
+  @include m('primary') {
+    background: $primary-color;
+    color: white;
+    &:hover {
+      background: $alt-color;
+      color: black;
+    }
+  }
+}
+
+
+
+// OLD STYLES
+
+.btn-primary, input.btn-primary {
+  padding: 0px 40px;
+  background: $primary-color;
+  color: white;
+  border: 1.5px solid $primary-color;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    background: $alt-color;
+    border: 1.5px solid $alt-color;
+  }
+}
+
+.btn-alt, input.btn-alt {
+  display: inline-block;
+  margin-bottom: 0px;
+  // padding: 15px 40px;
+  min-width: 200px;
+  text-align: center;
+  background: $alt-color;
+  color: black;
+  text-decoration:none;
+  &:hover {
+    color: lighten(black, 15%);
+    cursor: pointer;
+    background: $primary-color;
+  }
+}
+
+.btn-outline-primary, input.btn-outline-primary {
+  background: transparent;
+  color: $primary-color;
+  padding: 0px 40px;
+  border: 1.5px solid $primary-color;
+  // border-radius: 4px;
+  text-decoration: none !important;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-outline-white, input.btn-outline-white {
+  color: white;
+  padding: 0px 40px;
+  border: 1.5px solid white;
+  // border-radius: 4px;
+  text-decoration: none !important;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-outline-black, input.btn-outline-black {
+  margin: 0 auto;
+  color: black;
+  padding: 0px 40px;
+  border: 1.5px solid black;
+  // border-radius: 4px;
+  text-decoration: none !important;
+  &:hover {
+    cursor: pointer;
+    background: $primary-color;
+    border: 1.5px solid $primary-color;
+    color: white;
+  }
+}
+
+.btn-disabled, input.btn-disabled {
+  background: darken($alt-color, 20%) !important;
+  &:hover {
+    font-size: 1em;
+    cursor: not-allowed;
+  }
+}
+
+.button {
+  @include e('donate') {
+    position: absolute;
+    background: $alt-color;
+    font-family: $text-font-stack;
+    text-align: center;
+    color: black;
+    box-shadow: 2px -2px 50px -15px rgba(0,0,0,0.25);
+    font-size: 1.2em;
+    padding: 20px 40px;
+    @include m('isFixed') {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      visibility: hidden;
+    }
+    @include m('isBold') {
+      font-weight: 600;
+    }
+
+    @include m('hasTopBorder') {
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    @include m('isMobileOnly') {
+      @media screen and (min-width: $break-medium) {
+        display: none;
+      }
+    }
+  }
+
+  @include e('icon') {
+    padding: 0px 10px;
+  }
+
+  &:hover {
+    background: darken($alt-color, 10%);
+  }
+}

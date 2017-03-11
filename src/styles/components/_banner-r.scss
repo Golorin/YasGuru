@@ -1,0 +1,129 @@
+/* -------------------------------------------
+-------------------------------------------
+---------- Banner Styles ---------------------------------
+-------------------------------------------
+*/
+
+@import "helpers/_flexboxMixins";
+@import '../helpers/variables';
+
+$banner-bottom-offset: $navbar-height + 30px;
+$banner-mobile-height: 100vh;
+$banner-desktop-height: 500px;
+
+// General banner styles. The generic style positions headers at the bottom left of the banner.
+.banner {
+  padding: 0px 0px;
+  height: $banner-mobile-height;
+  margin-top: 0px;
+  background-size: cover;
+  z-index: 0;
+  @include flexbox;
+  @include flex-direction(column);
+  @include flex-wrap(wrap);
+  @include justify-content(flex-end);
+  @include align-content(flex-start);
+  transition: 0.5s height ease-in;
+  @media screen and (min-width: $break-medium) {
+    height: $banner-desktop-height;
+    transition: 0.5s height ease-in;
+  }
+
+  // Alternate banner positioning style where content is in the middle of the page and can be situated with .float-left or .float-right as the immediate child of this class to move left or right in banner.
+
+  @include m('b') {
+    @include flex-direction(row);
+    @include align-items(center);
+    @include align-content(center);
+  }
+
+  @include m('small') {
+    height: 100vh;
+    @media screen and (min-width: $break-medium) {
+      height: 400px;
+    }
+  }
+
+  @include m('xsmall') {
+    height: 100vh;
+    @media screen and (min-width: $break-medium) {
+      height: 300px;
+    }
+  }
+
+  @include m('isEmpty') {
+    @include justify-content(center);
+  }
+
+  @include e('wrapper') {
+    z-index: 1;
+    max-width: 500px;
+    margin: 0px 0px 80px 0px;
+    background: none;
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    @include align-items(flex-start);
+    @media screen and (min-width: $break-small) {
+      margin: 40px 15px;
+    }
+  }
+
+  @include e('container') {
+    color: white;
+    font-weight: bold;
+
+    @media screen and (min-width: $break-large) {
+      max-width: 500px;
+    }
+    @include m('b') {
+      margin: 0 auto;
+      @media screen and (min-width: $break-large) {
+        width: 1000px;
+      }
+    }
+
+    @include m('isAbsolute') {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      bottom: 0;
+    }
+
+    @include m('gradient') {
+      background: rgba(192, 36, 37, 0.45); /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, rgba(192, 36, 37, 0.45) , rgba(240, 203, 53, 0.45)); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, rgba(192, 36, 37, 0.45) , rgba(240, 203, 53, 0.45)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    @include e('form') {
+
+    }
+
+    @include m('left') {
+      padding: 20px 15px 20px 100px;
+      margin-left: -85px;
+      @media screen and (min-width: $break-hd) {
+        margin-left: -15px;
+        padding-left: 95px;
+      }
+    }
+
+    @include m('orange') {
+      background: $primary-color;
+    }
+
+    @include m('attachment') {
+      background: none;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    @include m('isLeftColumn') {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+/* -------------------------------------------
+-------------------------------------------
+---------- CTA Small Change Styles ---------------------------------
+-------------------------------------------
+*/
+
+@import "helpers/_flexboxMixins";
+@import '../helpers/variables';
+
+section.cta-small-change {
+  background: $primary-color;
+  color: white;
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
+  @media screen and (min-width: $break-medium) {
+    @include justify-content(center);
+  }
+  .cta-small-change-container {
+    @media screen and (min-width: $break-medium) {
+      max-width: 450px;
+    }
+    p {
+      margin-bottom: 0px;
+    }
+    ul {
+      @include flexbox;
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include justify-content(space-between);
+      @media screen and (min-width: $break-small) {
+        max-width: 400px;
+      }
+      li {
+        flex-basis: 45%;
+        margin: 15px 0px;
+        text-align: center;
+        @media screen and (min-width: $break-small) {
+          flex-basis: 20%;
+        }
+        a {
+          display: block;
+          text-decoration: none;
+          color: black;
+          padding: 15px 15px;
+          background: $alt-color;
+          border: 2px solid $alt-color;
+          cursor: pointer;
+          &:hover {
+            border: 2px solid black;
+          }
+        }
+      }
+    }
+  }
+}

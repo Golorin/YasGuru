@@ -1,0 +1,54 @@
+.cta-video {
+  display: none;
+  @media screen and (min-width: $break-medium) {
+    position: relative;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    .gradient-yellow {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3c706+0,f3c706+100&1+0,0+100 */
+      background: -moz-radial-gradient(center, ellipse cover,  rgba(243,199,6,1) 0%, rgba(243,199,6,0) 100%); /* FF3.6-15 */
+      background: -webkit-radial-gradient(center, ellipse cover,  rgba(243,199,6,1) 0%,rgba(243,199,6,0) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: radial-gradient(ellipse at center,  rgba(243,199,6,1) 0%,rgba(243,199,6,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c706', endColorstr='#00f3c706',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+      z-index: -1;
+    }
+    .cta-video-container {
+      padding: 20px 6.48%;
+      @include flexbox;
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+      @include align-content(center);
+      .video {
+        flex-basis: 100%;
+        background: #444;
+        @media screen and (min-width: $break-medium) {
+          flex-basis: 560px;
+          margin: 10px 10px;
+        }
+      }
+      .description {
+        flex-basis: 100%;
+        color: white;
+        @media screen and (min-width: $break-medium) {
+          flex-basis: 560px;
+          margin: 10px 0px;
+          padding: 10px 15px;
+        }
+        .heading {
+          font-size: 1.4em;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+}

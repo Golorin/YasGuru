@@ -1,0 +1,9 @@
+.hero-video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  @media screen and (min-width: $break-medium) {
+    min-width: 80vh;
+    min-height: 80vh;
+  }
+}

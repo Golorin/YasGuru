@@ -1,0 +1,181 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* -------------------------------------------
+-------------------------------------------
+---------- Variable Styles ---------------------------------
+-------------------------------------------
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box !important;
+  -webkit-text-size-adjust: 100%; }
+
+input {
+  border-radius: 0; }
+  input:focus {
+    outline-width: thin; }
+
+/* -------------------------------------------
+-------------------------------------------
+---------- Responsive Styles ---------------------------------
+-------------------------------------------
+*/
+/* -------------------------------------------
+-------------------------------------------
+---------- Variable Styles ---------------------------------
+-------------------------------------------
+*/
+@media screen and (min-width: 769px) {
+  .mobile {
+    display: none !important; } }
+
+.desktop {
+  display: none; }
+  @media screen and (min-width: 769px) {
+    .desktop {
+      display: initial; } }
+
+.float--left {
+  float: left; }
+
+.float--right {
+  float: right; }
+
+.banner__container {
+  position: relative;
+  background: #ccc;
+  width: 100%;
+  min-height: 500px;
+  padding: 20px 20px;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  align-items: center; }
+  .banner__container:after {
+    content: '';
+    width: 70px;
+    height: 70px;
+    background: #333;
+    border-radius: 100%;
+    position: absolute;
+    bottom: -35px; }
+
+.banner__wrapper {
+  background: #f1f1f1;
+  padding: 10px 10px; }
+
+.banner__video {
+  background: #eee;
+  width: 300px;
+  height: 150px; }
+  @media screen and (min-width: 769px) {
+    .banner__video {
+      width: 500px;
+      height: 250px; } }
+
+.banner__caption {
+  background: #333;
+  width: 100%;
+  height: 50px; }
+
+.module__container {
+  width: 100%;
+  padding: 40px 20px;
+  background: #444;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  align-items: center; }
+
+.module__wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-align-items: center;
+  align-items: center; }
+
+.module__heading {
+  flex-basis: 30%; }
+
+.module__content {
+  min-width: 200px;
+  background: #bbb;
+  flex-basis: 60%; }
+
+.profile__image {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background: white;
+  margin: 0 auto; }
+
+.profile__bio {
+  padding: 10px 10px;
+  margin: 10px 10px;
+  background: white;
+  color: black;
+  text-align: center; }

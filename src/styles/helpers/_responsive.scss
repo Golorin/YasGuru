@@ -1,0 +1,30 @@
+/* -------------------------------------------
+-------------------------------------------
+---------- Responsive Styles ---------------------------------
+-------------------------------------------
+*/
+
+@import "helpers/_flexboxMixins";
+@import '../helpers/variables';
+
+.mobile {
+  @media screen and (min-width: $break-medium) {
+    display: none !important;
+  }
+}
+
+.desktop {
+  display: none;
+  @media screen and (min-width: $break-medium) {
+    display: initial;
+  }
+}
+
+.float {
+  @include m('left') {
+    float: left;
+  }
+  @include m('right') {
+    float: right;
+  }
+}
