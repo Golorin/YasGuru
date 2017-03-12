@@ -1,105 +1,333 @@
 // Modules and Variables
-@import "base/_normalize";
-@import "base/_reset";
-@import "helpers/_mixins";
-@import "helpers/_responsive";
+@import "./base/_normalize";
+@import "./base/_reset";
+@import "./helpers/_mixins";
+@import "./base/_typography";
+@import "./helpers/_responsive";
+@import "./helpers/_variables";
 
+.primary-color {
+  background: $primary-color;
+}
+
+.alt-color {
+  background: $alt-color;
+}
+
+.headline {
+  text-align: center;
+}
+
+// Buttons
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: $alt-color;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  &:hover {
+    background: lighten($alt-color, 10%);
+  }
+  @include m('small') {
+    min-width: 75px;
+    font-size: 0.85em;
+  }
+
+  @include m('large') {
+    min-width: 175px;
+    padding: 10px 20px;
+  }
+
+  @include m('full') {
+    width: 100%;
+  }
+
+  @include m('outline') {
+    border: 2px solid black;
+    background: none;
+    color: black;
+  }
+}
+
+// Logo
+
+.logo {
+
+  @include m('nav') {
+    z-index: 2;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-family: "Knewave", sans-serif;
+    color: $alt-color;
+    font-size: 2.5em;
+    @media screen and (min-width: $break-small) {
+      top: 30px;
+      right: 30px;
+      left: inherit;
+    }
+  }
+
+  @include m('inline') {
+    font-size: 1.4em;
+    font-family: "Knewave", sans-serif !important;
+    color: $alt-color !important;
+  }
+}
+
+// nav
+
+.nav {
+  max-width: 1200px;
+  position: relative;
+}
+
+// Banner
 
 .banner {
-  @include e('container') {
+  @include e('wrapper') {
     position: relative;
-    background: #ccc;
+    background-image:url('/static/images/yasguru-images/Yasmin Elhady-0057.jpg');
+    background-position: 30% 20%;
+    background-size:cover;
     width: 100%;
-    min-height: 500px;
+    height: 100vh;
     padding: 20px 20px;
     @include flexbox;
     @include flex-direction(column);
     @include flex-wrap(wrap);
-    @include justify-content(center);
-    @include align-items(center);
+    @include justify-content(flex-end);
+    @include align-items(flex-start);
 
-    &:after {
-      content: '';
-      width: 70px;
-      height: 70px;
-      background: #333;
-      border-radius: 100%;
-      position: absolute;
-      bottom: -35px;
+    @media screen and (min-width: $break-small) {
+      height: 500px;
+      @include justify-content(center);
     }
   }
 
-  @include e('wrapper') {
-    background: #f1f1f1;
-    padding: 10px 10px;
-  }
-
-  @include e('video') {
-    background: #eee;
-    width: 300px;
-    height: 150px;
-
-    @media screen and (min-width: $break-medium) {
-      width: 500px;
-      height: 250px;
-    }
-  }
-
-  @include e('caption') {
-    background: #333;
+  @include e('container') {
     width: 100%;
-    height: 50px;
+    max-width: 1200px;
+    margin: 30px auto;
+  }
+
+  @include e('content') {
+    padding: 20px 20px;
+    max-width: 350px;
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    @include align-items(flex-start);
+  }
+
+  @include e('heading') {
+    font-size: 2.5em;
+    line-height: 1.15em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.45);
+    @media screen and (min-width: $break-medium) {
+      text-shadow: none;
+    }
+  }
+
+  @include e('subheading') {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 2px 2px 20px black;
+    @media screen and (min-width: $break-medium) {
+      text-shadow: none;
+    }
+  }
+
+  @include e('form') {
+    width: 100%;
+  }
+
+  @include e('input') {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 0.9em;
+    border: 1px solid #f1f1f1;
+  }
+
+  @include e('button') {
+    width: 100%;
+    padding: 10px 10px;
+    background: $alt-color;
+    text-align: center;
+    font-size: 0.9em;
+    margin: 10px 0px;
+    border: 0px;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      background: lighten($alt-color, 10%);
+    }
   }
 }
 
 // MODULE SECTION
 
 .module {
-  @include e('container') {
-    width: 100%;
-    padding: 40px 20px;
-    background: #444;
-    @include flexbox;
-    @include flex-direction(column);
-    @include flex-wrap(wrap);
-    @include justify-content(center);
-    @include align-items(center);
-  }
-
-  @include e('wrapper') {
-    width: 100%;
+  width: 100%;
+  // Traditional module with 50-50 split of content
+  &-a {
+    background-size:cover;
     @include flexbox;
     @include flex-direction(row);
     @include flex-wrap(wrap);
     @include justify-content(center);
     @include align-items(center);
+    padding: 25px 6.48%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include e('container') {
+      flex-basis: 100%;
+      @include flexbox;
+      @include flex-direction(column);
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+      @include align-items(center);
+      margin: 10px 10px;
+      @media screen and (min-width: $break-small) {
+        margin: 0px 10px;
+        flex-basis: 200px;
+        flex-grow: 1;
+        padding: 10px 10px;
+      }
+      @media screen and (min-width: $break-large) {
+        margin: 0px 25px;
+      }
+    }
   }
 
-  @include e('heading') {
-    flex-basis: 30%;
+  &-b {
+    background-image:url('/static/images/yasguru-images/Yasmin Elhady-0031.jpg');
+    background-position: 30% 30%;
+    background-size:cover;
+    @include flexbox;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    @include align-items(flex-start);
+    padding: 25px 6.48%;
+    margin: 0 auto;
+    height: 550px;
+
+    @media screen and (min-width: $break-small) {
+      background-position: 30% 30%;
+      height: 500px;
+    }
+
+    @media screen and (min-width: $break-medium) {
+      background-image:url('/static/images/yasguru-images/Yasmin black and white copy.jpg');
+      background-position: 70% 40%;
+      @include justify-content(flex-end);
+      @include align-items(center);
+    }
+
+    @include e('wrapper') {
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    @include e('container') {
+      width: 100%;
+      max-width: 730px;
+      padding: 15px 15px;
+      background: white;
+    }
   }
 
-  @include e('content') {
-    min-width: 200px;
-    background: #bbb;
-    flex-basis: 60%;
+  &-cta {
+
+    @include e('container') {
+      width: 100%;
+      max-width: 730px;
+      padding: 20px 20px;
+      background: white;
+      margin-top: -20px;
+      @media screen and (min-width: $break-medium) {
+        margin-top: inherit;
+        background: white;
+        max-width: 450px;
+      }
+    }
+
+    @include e('header') {
+      width: 100%;
+      text-align: center;
+    }
+
+    @include e('subheading') {
+      text-align: left;
+    }
+
+    @include e('form') {
+      @include flexbox;
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+      @include align-items(center);
+      width: 100%;
+      max-width: 700px;
+      margin: 15px auto;
+    }
+
+    @include e('input') {
+      height: 40px;
+      padding: 5px 15px;
+      max-width: 300px;
+      width: 100%;
+      flex-basis: 70%;
+      flex-grow: 1;
+      margin: -2px;
+      border: 2px solid black;
+    }
+
+    @include e('button') {
+      height: 40px;
+      flex-basis: 30%;
+      max-width: 200px;
+      flex-grow: 1;
+    }
   }
 }
 
-.profile {
-  @include e('image') {
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-    background: white;
-    margin: 0 auto;
+.video {
+
+  @include e('wrapper') {
+    padding: 10px 10px;
+    background: #f1f1f1;
+  }
+  @include e('container') {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    background-image: url('/static/images/yasguru-images/Yasmin Elhady-0060.jpg');
+    background-size: cover;
+    @media screen and (min-width: $break-small) {
+      min-width: 300px;
+    }
+    @media screen and (min-width: $break-medium) {
+      min-width: 350px;
+    }
   }
 
-  @include e('bio') {
-    padding: 10px 10px;
-    margin: 10px 10px;
-    background: white;
-    color: black;
-    text-align: center;
+  @include e('icon') {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -10%;
+    margin-top: -10%;
+    color: white;
   }
 }

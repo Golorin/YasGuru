@@ -2,21 +2,45 @@ extends layout
 
 block content
   header
-    .banner__container
-      .banner__wrapper
-        .banner__video
-        .banner__caption
-          .banner__headline
-          .banner__description
+    nav.nav
+      .logo--nav YasGuru
+    .banner__wrapper
+      .banner__container
+        .banner__content
+          h1.banner__heading Are you ready?
+          p.banner__subheading Ready to take the plunge and discover the secrets to lasting, successful relationships?
+          a(type="submit").btn.banner__button Sign Me Up
+        
   main
-    section.module__container
-      .module__wrapper
-        .module__heading
-          .profile__image
-          .profile__bio 
-            p Here is some sample content.
-        .module__content
-          p Here is some other stuff.
     section
+      .module(style="background:#b0aac2;")
+        .module-a
+          .module-a__container 
+            .video__container
+              i.video__icon.fa.fa-play-circle-o.fa-5x(aria-hidden="true")
+          .module-a__container
+            div(style="padding:5px 5px;")
+              h3.medium(style="color:#ffffff;") Are you ready?
+              p(style="color:#ffffff;") Finding love can seem hopeless when so many are single and those who are married struggle to avoid divorce. But are we really as hopeless and helpless as we think?
+              a.btn.btn--full(href="#") Click Here
+    section
+      .module
+        .module-a
+          .module-a__container
+            h3.font-bold.medium.headline
+              span.logo--inline YasGuru 
+              | is an innovative training program that helps identify the root of many incompatibilities and addresses the needs of future generations.
+            a.btn.btn--large.btn--outline(style="margin-top:20px;", href="#") Watch Video
+    section
+      .module
+        .module-b
+          .module-cta__container
+            h4.medium.headline.module-cta__header.font-alt Sign up for our updates.
+            p.subheading YasGuru training includes interactive, live workshops addressing how best to match oneself and prepare for marriage.
+            form.module-cta__form
+              input(placeholder="jdoe@email.com").module-cta__input
+              button.btn.btn--outline.module-cta__button Submit
+          
+            
     
     

@@ -10,15 +10,19 @@
 // Fonts
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  font-family: 'Lobster', serif;
+  margin-bottom: 1.4em;
 }
 
 p, span, a {
-  font-family: 'Montserrat', sans-serif;
   line-height: 1.2em;
+  font-family: 'Arimo', sans-serif;
 }
 
 p {
+  font: 1em;
+  line-height: 1.15em;
   font-weight: 300;
   margin-bottom: 1.2em;
 }
@@ -98,8 +102,18 @@ p {
   color: white;
 }
 
-.highlight {
+.font-alt {
   color: $alt-color;
+}
+
+// Text Alignment
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
 }
 
 // Icons

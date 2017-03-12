@@ -31,7 +31,7 @@ gulp.task('lint', function() {
 
 // Compile Our sass
 gulp.task('sass', function() {
-  return gulp.src('src/styles/*.scss')
+  return gulp.src('src/styles/main.scss')
     .pipe(sass())
     .pipe(gulp.dest('public/stylesheets'))
     .pipe(autoprefixer({
@@ -52,9 +52,9 @@ gulp.task('scripts', function() {
 });
 
 // Watch Files For Changes
-gulp.task('watch', function() {
+gulp.task('watch', ['sass'], function() {
   gulp.watch('src/scripts/*.js', ['lint', 'scripts']);
-  gulp.watch('src/styles/*.scss', ['sass']);
+  gulp.watch('src/**/*.scss', ['sass']);
 });
 
 // Default task

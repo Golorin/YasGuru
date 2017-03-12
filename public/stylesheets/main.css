@@ -51,6 +51,101 @@ input {
 
 /* -------------------------------------------
 -------------------------------------------
+---------- Typography Styles ---------------------------------
+-------------------------------------------
+*/
+/* -------------------------------------------
+-------------------------------------------
+---------- Variable Styles ---------------------------------
+-------------------------------------------
+*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  font-family: 'Lobster', serif;
+  margin-bottom: 1.4em; }
+
+p, span, a {
+  line-height: 1.2em;
+  font-family: 'Arimo', sans-serif; }
+
+p {
+  font: 1em;
+  line-height: 1.15em;
+  font-weight: 300;
+  margin-bottom: 1.2em; }
+
+.header-text {
+  font-family: 'Merriweather', serif; }
+  .header-text--hasNoMargin {
+    margin-bottom: 0 !important; }
+
+.text {
+  font-weight: 300;
+  margin-bottom: 1.2em; }
+  .text--hasNoMargin {
+    margin-bottom: 0; }
+
+.gigantic {
+  font-size: 3em;
+  margin: 0px 0px 25px 0px !important; }
+
+.huge {
+  font-size: 2.5em;
+  line-height: 1.2em;
+  margin: 0px 0px 20px 0px !important; }
+
+.large {
+  font-size: 2em;
+  line-height: 1.2em;
+  margin: 0px 0px 15px 0px; }
+
+.medium {
+  font-size: 1.5em;
+  margin: 0px 0px 15px 0px; }
+
+.small {
+  font-size: 0.85em;
+  margin: 0px 0px 8.5px 0px; }
+
+.center {
+  text-align: center; }
+
+.font-black {
+  font-weight: 900; }
+
+.font-heavy {
+  font-weight: 700; }
+
+.font-bold {
+  font-weight: 600; }
+
+.font-light {
+  font-weight: 300; }
+
+.font-primary {
+  color: #008F95; }
+
+.font-white {
+  color: white; }
+
+.font-alt {
+  color: #E9B000; }
+
+.align-left {
+  text-align: left; }
+
+.align-center {
+  text-align: center; }
+
+.icon-info {
+  margin-right: 10px;
+  cursor: pointer; }
+
+.white {
+  background: white; }
+
+/* -------------------------------------------
+-------------------------------------------
 ---------- Responsive Styles ---------------------------------
 -------------------------------------------
 */
@@ -75,11 +170,74 @@ input {
 .float--right {
   float: right; }
 
-.banner__container {
+/* -------------------------------------------
+-------------------------------------------
+---------- Variable Styles ---------------------------------
+-------------------------------------------
+*/
+.primary-color {
+  background: #008F95; }
+
+.alt-color {
+  background: #E9B000; }
+
+.headline {
+  text-align: center; }
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #E9B000;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer; }
+  .btn:hover {
+    background: #ffc81d; }
+  .btn--small {
+    min-width: 75px;
+    font-size: 0.85em; }
+  .btn--large {
+    min-width: 175px;
+    padding: 10px 20px; }
+  .btn--full {
+    width: 100%; }
+  .btn--outline {
+    border: 2px solid black;
+    background: none;
+    color: black; }
+
+.logo--nav {
+  z-index: 2;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-family: "Knewave", sans-serif;
+  color: #E9B000;
+  font-size: 2.5em; }
+  @media screen and (min-width: 480px) {
+    .logo--nav {
+      top: 30px;
+      right: 30px;
+      left: inherit; } }
+
+.logo--inline {
+  font-size: 1.4em;
+  font-family: "Knewave", sans-serif !important;
+  color: #E9B000 !important; }
+
+.nav {
+  max-width: 1200px;
+  position: relative; }
+
+.banner__wrapper {
   position: relative;
-  background: #ccc;
+  background-image: url("/static/images/yasguru-images/Yasmin Elhady-0057.jpg");
+  background-position: 30% 20%;
+  background-size: cover;
   width: 100%;
-  min-height: 500px;
+  height: 100vh;
   padding: 20px 20px;
   display: -webkit-box;
   display: -moz-flex;
@@ -89,43 +247,27 @@ input {
   -moz-flex-direction: column;
   flex-direction: column;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -moz-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -moz-align-items: center;
-  align-items: center; }
-  .banner__container:after {
-    content: '';
-    width: 70px;
-    height: 70px;
-    background: #333;
-    border-radius: 100%;
-    position: absolute;
-    bottom: -35px; }
+  -webkit-box-pack: end;
+  -moz-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-box-align: start;
+  -moz-align-items: flex-start;
+  align-items: flex-start; }
+  @media screen and (min-width: 480px) {
+    .banner__wrapper {
+      height: 500px;
+      -webkit-box-pack: center;
+      -moz-justify-content: center;
+      justify-content: center; } }
 
-.banner__wrapper {
-  background: #f1f1f1;
-  padding: 10px 10px; }
-
-.banner__video {
-  background: #eee;
-  width: 300px;
-  height: 150px; }
-  @media screen and (min-width: 769px) {
-    .banner__video {
-      width: 500px;
-      height: 250px; } }
-
-.banner__caption {
-  background: #333;
+.banner__container {
   width: 100%;
-  height: 50px; }
+  max-width: 1200px;
+  margin: 30px auto; }
 
-.module__container {
-  width: 100%;
-  padding: 40px 20px;
-  background: #444;
+.banner__content {
+  padding: 20px 20px;
+  max-width: 350px;
   display: -webkit-box;
   display: -moz-flex;
   display: flex;
@@ -134,48 +276,215 @@ input {
   -moz-flex-direction: column;
   flex-direction: column;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -moz-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -moz-align-items: center;
-  align-items: center; }
+  -webkit-box-align: start;
+  -moz-align-items: flex-start;
+  align-items: flex-start; }
 
-.module__wrapper {
+.banner__heading {
+  font-size: 2.5em;
+  line-height: 1.15em;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.45); }
+  @media screen and (min-width: 769px) {
+    .banner__heading {
+      text-shadow: none; } }
+
+.banner__subheading {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: white;
+  text-shadow: 2px 2px 20px black; }
+  @media screen and (min-width: 769px) {
+    .banner__subheading {
+      text-shadow: none; } }
+
+.banner__form {
+  width: 100%; }
+
+.banner__input {
   width: 100%;
-  display: -webkit-box;
-  display: -moz-flex;
-  display: flex;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -moz-flex-direction: row;
-  flex-direction: row;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -moz-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -moz-align-items: center;
-  align-items: center; }
-
-.module__heading {
-  flex-basis: 30%; }
-
-.module__content {
-  min-width: 200px;
-  background: #bbb;
-  flex-basis: 60%; }
-
-.profile__image {
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  background: white;
-  margin: 0 auto; }
-
-.profile__bio {
   padding: 10px 10px;
-  margin: 10px 10px;
-  background: white;
-  color: black;
-  text-align: center; }
+  font-size: 0.9em;
+  border: 1px solid #f1f1f1; }
+
+.banner__button {
+  width: 100%;
+  padding: 10px 10px;
+  background: #E9B000;
+  text-align: center;
+  font-size: 0.9em;
+  margin: 10px 0px;
+  border: 0px;
+  outline: none;
+  cursor: pointer; }
+  .banner__button:hover {
+    background: #ffc81d; }
+
+.module {
+  width: 100%; }
+  .module-a {
+    background-size: cover;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    align-items: center;
+    padding: 25px 6.48%;
+    max-width: 1200px;
+    margin: 0 auto; }
+    .module-a__container {
+      flex-basis: 100%;
+      display: -webkit-box;
+      display: -moz-flex;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -moz-flex-direction: column;
+      flex-direction: column;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -moz-align-items: center;
+      align-items: center;
+      margin: 10px 10px; }
+      @media screen and (min-width: 480px) {
+        .module-a__container {
+          margin: 0px 10px;
+          flex-basis: 200px;
+          -webkit-box-flex: 1;
+          flex-grow: 1;
+          padding: 10px 10px; } }
+      @media screen and (min-width: 1000px) {
+        .module-a__container {
+          margin: 0px 25px; } }
+  .module-b {
+    background-image: url("/static/images/yasguru-images/Yasmin Elhady-0031.jpg");
+    background-position: 30% 30%;
+    background-size: cover;
+    display: -webkit-box;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    padding: 25px 6.48%;
+    margin: 0 auto;
+    height: 550px; }
+    @media screen and (min-width: 480px) {
+      .module-b {
+        background-position: 30% 30%;
+        height: 500px; } }
+    @media screen and (min-width: 769px) {
+      .module-b {
+        background-image: url("/static/images/yasguru-images/Yasmin black and white copy.jpg");
+        background-position: 70% 40%;
+        -webkit-box-pack: end;
+        -moz-justify-content: flex-end;
+        justify-content: flex-end;
+        -webkit-box-align: center;
+        -moz-align-items: center;
+        align-items: center; } }
+    .module-b__wrapper {
+      width: 100%;
+      max-width: 1200px; }
+    .module-b__container {
+      width: 100%;
+      max-width: 730px;
+      padding: 15px 15px;
+      background: white; }
+  .module-cta__container {
+    width: 100%;
+    max-width: 730px;
+    padding: 20px 20px;
+    background: white;
+    margin-top: -20px; }
+    @media screen and (min-width: 769px) {
+      .module-cta__container {
+        margin-top: inherit;
+        background: white;
+        max-width: 450px; } }
+  .module-cta__header {
+    width: 100%;
+    text-align: center; }
+  .module-cta__subheading {
+    text-align: left; }
+  .module-cta__form {
+    display: -webkit-box;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-align-items: center;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    margin: 15px auto; }
+  .module-cta__input {
+    height: 40px;
+    padding: 5px 15px;
+    max-width: 300px;
+    width: 100%;
+    flex-basis: 70%;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    margin: -2px;
+    border: 2px solid black; }
+  .module-cta__button {
+    height: 40px;
+    flex-basis: 30%;
+    max-width: 200px;
+    -webkit-box-flex: 1;
+    flex-grow: 1; }
+
+.video__wrapper {
+  padding: 10px 10px;
+  background: #f1f1f1; }
+
+.video__container {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  background-image: url("/static/images/yasguru-images/Yasmin Elhady-0060.jpg");
+  background-size: cover; }
+  @media screen and (min-width: 480px) {
+    .video__container {
+      min-width: 300px; } }
+  @media screen and (min-width: 769px) {
+    .video__container {
+      min-width: 350px; } }
+
+.video__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -10%;
+  margin-top: -10%;
+  color: white; }
