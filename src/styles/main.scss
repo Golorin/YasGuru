@@ -56,15 +56,15 @@
 // Logo
 
 .logo {
-
+  font-family: "Titan One", cursive;
   @include m('nav') {
     z-index: 2;
     position: absolute;
     top: 30px;
     left: 30px;
-    font-family: "Knewave", sans-serif;
+    font-family: "Titan One", cursive;
     color: $alt-color;
-    font-size: 2.5em;
+    font-size: 3.5em;
     @media screen and (min-width: $break-small) {
       top: 30px;
       right: 30px;
@@ -74,7 +74,7 @@
 
   @include m('inline') {
     font-size: 1.4em;
-    font-family: "Knewave", sans-serif !important;
+    font-family: "Titan One", cursive !important;
     color: $alt-color !important;
   }
 }
@@ -228,9 +228,9 @@
     }
 
     @media screen and (min-width: $break-medium) {
-      background-image:url('/static/images/yasguru-images/Yasmin black and white copy.jpg');
+      background-image:url('/static/images/yasguru-images/yasmin2.jpg');
       background-position: 70% 40%;
-      @include justify-content(flex-end);
+      @include justify-content(flex-start);
       @include align-items(center);
     }
 
@@ -258,7 +258,7 @@
       @media screen and (min-width: $break-medium) {
         margin-top: inherit;
         background: white;
-        max-width: 450px;
+        max-width: 350px;
       }
     }
 
@@ -299,6 +299,114 @@
       max-width: 200px;
       flex-grow: 1;
     }
+  }
+}
+
+
+.module-c {
+  background: $primary-color;
+  min-height: 200px;
+  width: 100%;
+  @include flexbox;
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+
+  @include e('container') {
+    flex-basis: 100%;
+    padding: 25px 15px;
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    @include align-items(center);
+    @media screen and (min-width: $break-medium) {
+      flex-basis: 50%;
+      padding: 40px 40px;
+    }
+  }
+
+  @include e('content') {
+    max-width: 400px;
+  }
+
+  @include e('header') {
+    width: 100%;
+    text-align: left;
+  }
+
+  @include e('subheading') {
+    color: #f1f1f1;
+  }
+
+  @include e('button') {
+    background: lighten($primary-color, 5%);
+  }
+}
+
+.footer {
+  background: lighten(#b0aac2, 10%);
+  min-height: 300px;
+  @include flexbox;
+  @include flex-direction(column);
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+  @include align-items(center);
+
+  @include e('container') {
+    @include flexbox;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    @include align-items(center);
+  }
+
+  @include e('header') {
+    margin-bottom: 10px;
+    font-size: 1.15em;
+    @include m('noMargin') {
+      margin-bottom: 0px;
+    }
+  }
+
+  @include e('contact') {
+    text-decoration: none;
+    margin: 5px 10px;
+    color: darken($primary-color, 10%);
+  }
+
+  @include e('separator') {
+    width: 2px;
+    height: 20px;
+    background: $primary-color;
+  }
+
+  @include e('logo') {
+    @extend .logo;
+    font-size: 3em;
+    margin: 15px 10px;
+  }
+}
+
+.social {
+
+  @include e('header') {
+    margin: 10px 0px 0px 0px;
+  }
+  @include e('container') {
+    width: 100%;
+    @include flexbox;
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    @include align-items(center);
+  }
+  @include e('link') {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: black;
+    margin: 10px 10px;
   }
 }
 
