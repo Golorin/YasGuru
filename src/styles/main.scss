@@ -82,6 +82,8 @@
 // nav
 
 .nav {
+  width: 100%;
+  margin: 0 auto;
   max-width: 1200px;
   position: relative;
 }
@@ -283,6 +285,7 @@
     }
 
     @include e('input') {
+      font-size: 0.9em;
       height: 40px;
       padding: 5px 15px;
       max-width: 300px;
@@ -314,7 +317,7 @@
 
   @include e('container') {
     flex-basis: 100%;
-    padding: 25px 15px;
+    padding: 25px 6.48%;
     @include flexbox;
     @include flex-direction(column);
     @include flex-wrap(wrap);
@@ -364,6 +367,7 @@
   @include e('header') {
     margin-bottom: 10px;
     font-size: 1.15em;
+    color: $primary-color;
     @include m('noMargin') {
       margin-bottom: 0px;
     }
@@ -372,7 +376,7 @@
   @include e('contact') {
     text-decoration: none;
     margin: 5px 10px;
-    color: darken($primary-color, 10%);
+    color: white;
   }
 
   @include e('separator') {
@@ -383,6 +387,7 @@
 
   @include e('logo') {
     @extend .logo;
+    color: $primary-color;
     font-size: 3em;
     margin: 15px 10px;
   }
@@ -392,6 +397,7 @@
 
   @include e('header') {
     margin: 10px 0px 0px 0px;
+    color: $primary-color;
   }
   @include e('container') {
     width: 100%;
@@ -405,7 +411,7 @@
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    background: black;
+    background: $primary-color;
     margin: 10px 10px;
   }
 }
