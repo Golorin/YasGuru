@@ -1,0 +1,53 @@
+
+.notification {
+
+
+  @include e('success') {
+    display: none;
+    .notification__container {
+      font-size: 0.85em;
+      font-weight: bold;
+      background: white;
+      padding: 10px 10px;
+      margin: 5px auto;
+      width: 100%;
+      color: green;
+      @include flexbox;
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include align-content(center);
+      i {
+        flex-basis: 10%;
+        color: green;
+      }
+    }
+  }
+
+  @include e('message') {
+    font-family: $text-font-stack-alt;
+    flex-basis: 60%;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+
+  @include e('error') {
+    display: none;
+    .notification__container {
+      font-size: 0.85em;
+      font-weight: bold;
+      background: white;
+      color: red;
+      padding: 10px 10px;
+      margin: 5px auto;
+      width: 100%;
+      @include flexbox;
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include align-content(center);
+      i {
+        flex-basis: 10%;
+        color: red;
+      }
+    }
+  }
+}

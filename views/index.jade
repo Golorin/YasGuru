@@ -13,16 +13,18 @@ block content
         
   main
     section
-      .module(style="background:#b0aac2;")
+      .module.accent-color
         .module-a
-          .module-a__container 
-            a.video__container(href="#")
+          .module-a__container
+            .video__container
+              a.video__link(href="https://youtu.be/KtYGroM0rJc")
               i.video__icon.fa.fa-play-circle-o.fa-5x(aria-hidden="true")
+            p.video__title Love Notes Ep. 1: Young & Dreamy
           .module-a__container
             div(style="padding:5px 5px;")
               h3.medium(style="color:#ffffff;") Kiss the relationship blues goodbye.
               p(style="color:#ffffff;") Finding love can seem hopeless when so many are single and those who are married struggle to avoid divorce. But are we really as hopeless and helpless as we think? The answer is "no."
-              a.btn.btn--full(href="#") Discover Why
+              a.btn.btn--full(href="https://youtu.be/KtYGroM0rJc", target="_blank") Discover Why
     section
       .module
         .module-a
@@ -30,7 +32,7 @@ block content
             h3.font-bold.medium.headline
               span.logo--inline YasGuru 
               | is an innovative program that helps you identify incompatibilities in relationships while building towards a brighter, more fulfilling future.
-            a.btn.btn--large.btn--outline(style="margin-top:20px;", href="#") Watch Video
+            a.btn.btn--large.btn--outline(style="margin-top:20px;", href="https://youtu.be/KtYGroM0rJc", target="_blank") Watch Video
     section
       .module
         .module-c
@@ -39,9 +41,17 @@ block content
             .module-c__content
               h4.medium.headline.module-c__header.font-alt Uncover the key to a healthy, successful relationship.
               p.subheading.module-c__subheading YasGuru training includes interactive, live workshops addressing how best to match oneself and prepare for marriage.
-              form.module-cta__form
-                input(placeholder="email@yasguru.com").module-cta__input
-                button.btn.btn--outline.module-cta__button.module-c__button Submit
+              form.email__signup.module-cta__form(method="POST", action="/subscribe")
+                input(placeholder="email@yasguru.com", name="email").module-cta__input
+                button.btn.btn--outline.module-cta__button.module-c__button(type="submit") Submit
+              .notification__success(style="visibility:initial;")
+                .notification__container
+                    i(class="fa fa-paper-plane-o fa-lg", aria-hidden="true")
+                    .notification__message
+              .notification__error 
+                .notification__container
+                  i(class="fa fa-exclamation-circle fa-lg", aria-hidden="true")
+                  .notification__message
   footer
     .footer
       .footer__logo YasGuru
@@ -54,10 +64,15 @@ block content
       .footer__container
         p.social__header Keep up with Yasmin:
         ul.social__container
-          li.social__link 
-          li.social__link
-          li.social__link 
-          li.social__link
+          li.social__item
+            a.social__link(href="https://www.facebook.com/YasGuru1/", target="_blank")
+              i.fa.fa-facebook-square.fa-2x.social__icon(aria-hidden="true")
+          li.social__item 
+            a.social__link(href="https://www.youtube.com/channel/UCURpYI86UnAFDzoEAJ4FjXQ", target="_blank")
+              i.fa.fa-youtube.fa-2x.social__icon(aria-hidden="true")
+          li.social__item 
+            a.social__link(href="https://twitter.com/@yas_guru", target="_blank")
+              i.fa.fa-twitter-square.fa-2x.social__icon(aria-hidden="true")
     
           
             

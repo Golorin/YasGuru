@@ -5,9 +5,18 @@
 @import "./base/_typography";
 @import "./helpers/_responsive";
 @import "./helpers/_variables";
+@import "./components/_notifications";
 
 .primary-color {
   background: $primary-color;
+}
+
+.primary-light {
+  background: lighten($primary-color, 8%);
+}
+
+.accent-color {
+  background: #b0aac2;
 }
 
 .alt-color {
@@ -56,13 +65,13 @@
 // Logo
 
 .logo {
-  font-family: "Titan One", cursive;
+  font-family: "Fredoka One", cursive;
   @include m('nav') {
     z-index: 2;
     position: absolute;
     top: 30px;
     left: 30px;
-    font-family: "Titan One", cursive;
+    font-family: "Fredoka One", cursive;
     color: $alt-color;
     font-size: 3.5em;
     @media screen and (min-width: $break-small) {
@@ -74,7 +83,7 @@
 
   @include m('inline') {
     font-size: 1.4em;
-    font-family: "Titan One", cursive !important;
+    font-family: "Fredoka One", cursive !important;
     color: $alt-color !important;
   }
 }
@@ -119,7 +128,7 @@
 
   @include e('content') {
     padding: 20px 20px;
-    max-width: 350px;
+    max-width: 400px;
     @include flexbox;
     @include flex-direction(column);
     @include flex-wrap(wrap);
@@ -134,6 +143,7 @@
     color: white;
     text-shadow: 2px 2px 20px rgba(0,0,0,0.45);
     @media screen and (min-width: $break-medium) {
+      font-size: 3em;
       text-shadow: none;
     }
   }
@@ -198,7 +208,6 @@
       @include flex-wrap(wrap);
       @include justify-content(center);
       @include align-items(center);
-      margin: 10px 10px;
       @media screen and (min-width: $break-small) {
         margin: 0px 10px;
         flex-basis: 200px;
@@ -281,7 +290,7 @@
       @include align-items(center);
       width: 100%;
       max-width: 700px;
-      margin: 15px auto;
+      margin: 15px 0px 5px 0px;
     }
 
     @include e('input') {
@@ -307,6 +316,7 @@
 
 
 .module-c {
+  @extend .primary-light;
   background: $primary-color;
   min-height: 200px;
   width: 100%;
@@ -321,11 +331,11 @@
     @include flexbox;
     @include flex-direction(column);
     @include flex-wrap(wrap);
-    @include justify-content(center);
+    @include justify-content(flex-start);
     @include align-items(center);
     @media screen and (min-width: $break-medium) {
       flex-basis: 50%;
-      padding: 40px 40px;
+      padding: 60px 40px;
     }
   }
 
@@ -336,6 +346,7 @@
   @include e('header') {
     width: 100%;
     text-align: left;
+    line-height: 1.2em;
   }
 
   @include e('subheading') {
@@ -348,7 +359,7 @@
 }
 
 .footer {
-  background: lighten(#b0aac2, 10%);
+  background: white;
   min-height: 300px;
   @include flexbox;
   @include flex-direction(column);
@@ -376,7 +387,7 @@
   @include e('contact') {
     text-decoration: none;
     margin: 5px 10px;
-    color: white;
+    color: $alt-color;
   }
 
   @include e('separator') {
@@ -407,12 +418,25 @@
     @include justify-content(center);
     @include align-items(center);
   }
-  @include e('link') {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background: $primary-color;
+  @include e('item') {
+    position: relative;
+    width: 20px;
+    height: 20px;
     margin: 10px 10px;
+  }
+
+  @include e('link') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+  }
+
+  @include e('icon') {
+    color: $primary-color;
+    margin: 0 auto;
   }
 }
 
@@ -434,6 +458,24 @@
     @media screen and (min-width: $break-medium) {
       min-width: 350px;
     }
+  }
+
+  @include e('link') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  @include e('title') {
+    padding: 5px;
+    width: 100%;
+    text-align:center;
+    font-weight: bold;
+    background: white;
   }
 
   @include e('icon') {
