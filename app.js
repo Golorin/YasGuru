@@ -1,4 +1,5 @@
 var express = require('express');
+var cluster = require('cluster');
 var path = require('path');
 var dotenv = require('dotenv').config();
 var favicon = require('serve-favicon');
