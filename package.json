@@ -10,6 +10,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "~1.15.2",
+    "cluster": "^0.7.7",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "dotenv": "^4.0.0",
