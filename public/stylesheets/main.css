@@ -73,7 +73,7 @@ p, span, a {
 p {
   font: 1em;
   line-height: 1.3em;
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: 1.2em; }
 
 .header-text {
@@ -297,8 +297,8 @@ p {
 
 .banner__wrapper {
   position: relative;
-  background-image: url("/static/images/yasguru-images/Yasmin Elhady-0057.jpg");
-  background-position: 30% 20%;
+  background-image: url("/static/images/yasguru-images/yasmin3.jpg");
+  background-position: 30% 30%;
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -332,6 +332,7 @@ p {
 .banner__content {
   padding: 20px 20px;
   max-width: 400px;
+  background: rgba(0, 0, 0, 0.45);
   display: -webkit-box;
   display: -moz-flex;
   display: flex;
@@ -345,7 +346,7 @@ p {
   align-items: flex-start; }
 
 .banner__heading {
-  font-size: 2.5em;
+  font-size: 1.75em;
   line-height: 1.15em;
   margin-bottom: 10px;
   font-weight: bold;
@@ -353,7 +354,7 @@ p {
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.45); }
   @media screen and (min-width: 769px) {
     .banner__heading {
-      font-size: 3em;
+      font-size: 2em;
       text-shadow: none; } }
 
 .banner__subheading {

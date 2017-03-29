@@ -102,8 +102,8 @@
 .banner {
   @include e('wrapper') {
     position: relative;
-    background-image:url('/static/images/yasguru-images/Yasmin Elhady-0057.jpg');
-    background-position: 30% 20%;
+    background-image:url('/static/images/yasguru-images/yasmin3.jpg');
+    background-position: 30% 30%;
     background-size:cover;
     width: 100%;
     height: 100vh;
@@ -129,6 +129,7 @@
   @include e('content') {
     padding: 20px 20px;
     max-width: 400px;
+    background: rgba(0,0,0,0.45);
     @include flexbox;
     @include flex-direction(column);
     @include flex-wrap(wrap);
@@ -136,14 +137,14 @@
   }
 
   @include e('heading') {
-    font-size: 2.5em;
+    font-size: 1.75em;
     line-height: 1.15em;
     margin-bottom: 10px;
     font-weight: bold;
     color: white;
     text-shadow: 2px 2px 20px rgba(0,0,0,0.45);
     @media screen and (min-width: $break-medium) {
-      font-size: 3em;
+      font-size: 2em;
       text-shadow: none;
     }
   }
