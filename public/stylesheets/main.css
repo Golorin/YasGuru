@@ -61,7 +61,7 @@ input {
 */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  font-family: 'Lobster', serif;
+  font-family: 'Fredoka One', serif;
   margin-bottom: 1.4em; }
 
 p, span, a {
@@ -103,6 +103,7 @@ p {
 
 .medium {
   font-size: 1.5em;
+  line-height: 1.25em;
   margin: 0px 0px 15px 0px; }
 
 .small {
@@ -236,6 +237,9 @@ p {
 .primary-light, .module-c {
   background: #00b6be; }
 
+.primary-xlight {
+  background: #00c0c8; }
+
 .accent-color {
   background: #b0aac2; }
 
@@ -285,9 +289,8 @@ p {
         right: 30px;
         left: inherit; } }
   .logo--inline {
-    font-size: 1.4em;
     font-family: "Fredoka One", cursive !important;
-    color: #E9B000 !important; }
+    color: white; }
 
 .nav {
   width: 100%;
@@ -424,7 +427,8 @@ p {
       justify-content: center;
       -webkit-box-align: center;
       -moz-align-items: center;
-      align-items: center; }
+      align-items: center;
+      padding: 10px 0px; }
       @media screen and (min-width: 480px) {
         .module-a__container {
           margin: 0px 10px;
@@ -435,6 +439,9 @@ p {
       @media screen and (min-width: 1000px) {
         .module-a__container {
           margin: 0px 25px; } }
+      @media screen and (min-width: 480px) {
+        .module-a__container--full {
+          flex-basis: 100% !important; } }
   .module-b {
     background-image: url("/static/images/yasguru-images/Yasmin Elhady-0031.jpg");
     background-position: 30% 30%;
@@ -571,7 +578,8 @@ p {
   .module-c__header {
     width: 100%;
     text-align: left;
-    line-height: 1.2em; }
+    line-height: 1.2em;
+    color: #ffc81d; }
   .module-c__subheading {
     color: #f1f1f1; }
   .module-c__button {
@@ -675,7 +683,6 @@ p {
   position: relative;
   width: 100%;
   min-height: 200px;
-  background-image: url("/static/images/yasguru-images/Yasmin Elhady-0060.jpg");
   background-size: cover; }
   @media screen and (min-width: 480px) {
     .video__container {
@@ -683,6 +690,13 @@ p {
   @media screen and (min-width: 769px) {
     .video__container {
       min-width: 350px; } }
+
+.video__youtube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 
 .video__link {
   position: absolute;
@@ -699,6 +713,8 @@ p {
   text-align: center;
   font-weight: bold;
   background: white; }
+  .video__title--alt {
+    background: #f1f1f1; }
 
 .video__icon {
   position: absolute;

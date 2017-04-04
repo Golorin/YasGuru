@@ -17,16 +17,18 @@ block content
         .module-a
           .module-a__container
             .video__container
-              a.video__link(href="https://youtu.be/KtYGroM0rJc")
-              i.video__icon.fa.fa-play-circle-o.fa-5x(aria-hidden="true")
+              //- a.video__link(href="https://youtu.be/KtYGroM0rJc")
+              //- i.video__icon.fa.fa-play-circle-o.fa-5x(aria-hidden="true")
+              iframe.video__youtube(width='560', height='315', src='https://www.youtube.com/embed/h497t4Iy4Xo?ecver=1&showinfo=0', frameborder='0', allowfullscreen='')
+
             p.video__title Love Notes Ep. 1: Young & Dreamy
           .module-a__container
             div(style="padding:5px 5px;")
               h3.medium(style="color:#ffffff;") Kiss the relationship blues goodbye.
               p(style="color:#ffffff;") Finding love can seem hopeless when so many are single and those who are married struggle to avoid divorce. But are we really as hopeless and helpless as we think? The answer is "no."
-              a.btn.btn--full(href="https://youtu.be/KtYGroM0rJc", target="_blank") Discover Why
+              a.btn.btn--full(href="https://youtu.be/KtYGroM0rJc", target="_blank") Learn More
     section
-      .module
+      .module.primary-xlight
         .module-a
           .module-a__container
             h3.font-bold.medium.headline
@@ -35,11 +37,32 @@ block content
             a.btn.btn--large.btn--outline(style="margin-top:20px;", href="https://youtu.be/KtYGroM0rJc", target="_blank") Watch Video
     section
       .module
+        .module-a
+          .module-a__container.module-a__container--full
+            h4.font-bold.medium Love Notes Series Episodes
+            p.headline Interested in seeing more content from YasGuru? Never miss an update. Subscribe below:
+            .g-ytsubscribe(data-channelid='UCURpYI86UnAFDzoEAJ4FjXQ', data-layout='default', data-count='hidden')
+            script(src='https://apis.google.com/js/platform.js')
+
+          .module-a__container
+            .video__container
+              iframe.video__youtube(width='560', height='315', src='https://www.youtube.com/embed/KtYGroM0rJc?ecver=1&showinfo=0', frameborder='0', allowfullscreen='')
+
+            p.video__title.video__title--alt Love Notes Ep. 1: Young & Dreamy
+          .module-a__container
+            .video__container
+              iframe.video__youtube(width='560', height='315', src='https://www.youtube.com/embed/h497t4Iy4Xo?ecver=1&showinfo=0', frameborder='0', allowfullscreen='')
+
+            p.video__title.video__title--alt Love Notes Ep. 2: No Means No
+          //- .module-a__container.module-a__container--full
+          //-   a.btn.btn--large.btn--primary(href="https://www.youtube.com/channel/UCURpYI86UnAFDzoEAJ4FjXQ", target="_blank") Visit the YasGuru Channel
+    section
+      .module
         .module-c
           .module-c__container(style="background-image:url('/static/images/yasguru-images/Yasmin Elhady-0057.jpg');background-size:cover;background-position:30% 35%;height:350px;")
           .module-c__container(id="signup")
             .module-c__content
-              h4.medium.headline.module-c__header.font-alt Uncover the key to a healthy, successful relationship.
+              h4.medium.headline.module-c__header Uncover the key to a healthy, successful relationship.
               p.subheading.module-c__subheading YasGuru training includes interactive, live workshops addressing how best to match oneself and prepare for marriage.
               form.email__signup.module-cta__form(method="POST", action="/subscribe")
                 input(placeholder="email@yasguru.com", name="email").module-cta__input

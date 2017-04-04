@@ -15,6 +15,10 @@
   background: lighten($primary-color, 8%);
 }
 
+.primary-xlight {
+  background: lighten($primary-color, 10%);
+}
+
 .accent-color {
   background: #b0aac2;
 }
@@ -82,9 +86,8 @@
   }
 
   @include m('inline') {
-    font-size: 1.4em;
     font-family: "Fredoka One", cursive !important;
-    color: $alt-color !important;
+    color: white;
   }
 }
 
@@ -209,6 +212,7 @@
       @include flex-wrap(wrap);
       @include justify-content(center);
       @include align-items(center);
+      padding: 10px 0px;
       @media screen and (min-width: $break-small) {
         margin: 0px 10px;
         flex-basis: 200px;
@@ -218,7 +222,13 @@
       @media screen and (min-width: $break-large) {
         margin: 0px 25px;
       }
+      @include m('full') {
+        @media screen and (min-width: $break-small) {
+          flex-basis: 100% !important;
+        }
+      }
     }
+
   }
 
   &-b {
@@ -348,6 +358,7 @@
     width: 100%;
     text-align: left;
     line-height: 1.2em;
+    color: lighten($alt-color, 10%);
   }
 
   @include e('subheading') {
@@ -451,7 +462,7 @@
     position: relative;
     width: 100%;
     min-height: 200px;
-    background-image: url('/static/images/yasguru-images/Yasmin Elhady-0060.jpg');
+    // background-image: url('/static/images/yasguru-images/Yasmin Elhady-0060.jpg');
     background-size: cover;
     @media screen and (min-width: $break-small) {
       min-width: 300px;
@@ -459,6 +470,14 @@
     @media screen and (min-width: $break-medium) {
       min-width: 350px;
     }
+  }
+
+  @include e('youtube') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   @include e('link') {
@@ -477,6 +496,9 @@
     text-align:center;
     font-weight: bold;
     background: white;
+    @include m('alt') {
+      background: #f1f1f1;
+    }
   }
 
   @include e('icon') {
