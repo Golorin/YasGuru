@@ -442,6 +442,9 @@ p {
       @media screen and (min-width: 480px) {
         .module-a__container--full {
           flex-basis: 100% !important; } }
+      @media screen and (min-width: 769px) {
+        .module-a__container--b {
+          max-width: 439px; } }
   .module-b {
     background-image: url("/static/images/yasguru-images/Yasmin Elhady-0031.jpg");
     background-position: 30% 30%;

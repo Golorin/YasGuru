@@ -227,6 +227,12 @@
           flex-basis: 100% !important;
         }
       }
+
+      @include m('b') {
+        @media screen and (min-width: $break-medium) {
+          max-width: 439px;
+        }
+      }
     }
 
   }
