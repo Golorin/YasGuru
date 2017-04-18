@@ -345,24 +345,29 @@ p {
   -webkit-box-align: start;
   -moz-align-items: flex-start;
   align-items: flex-start; }
+  @media screen and (min-width: 480px) {
+    .banner__content {
+      max-width: 250px; } }
+  @media screen and (min-width: 769px) {
+    .banner__content {
+      max-width: 350px; } }
 
 .banner__heading {
-  font-size: 1.75em;
-  line-height: 1.15em;
+  font-size: 1.35em;
+  line-height: 1.05em;
   margin-bottom: 10px;
   font-weight: bold;
-  color: white;
-  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.45); }
+  color: white; }
   @media screen and (min-width: 769px) {
     .banner__heading {
-      font-size: 2em;
+      font-size: 1.8em;
+      line-height: 1.15em;
       text-shadow: none; } }
 
 .banner__subheading {
   font-size: 1em;
   margin-bottom: 10px;
-  color: white;
-  text-shadow: 2px 2px 20px black; }
+  color: white; }
   @media screen and (min-width: 769px) {
     .banner__subheading {
       text-shadow: none; } }
