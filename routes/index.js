@@ -17,11 +17,32 @@ router.get('/', function(req, res, next) {
     // console.log(entries.items);
     // console.log(entries.sys.type);
     var fields = _.pluck(entries.items, 'fields');
-    var episodes = _.sortBy(fields, 'episodeNumber');
-    var latest = _.last(episodes);
+    // console.log(fields);
+    var episodes = _.filter(fields, function(field) {
+        var isEpisode = _.has(field, "episodeNumber");
+        if(isEpisode) {
+          return field;
+        } else {
+          return false;
+        }
+    });
+    var cta = _.filter(fields, function(field) {
+        var isCta = _.has(field, "ctaHeadline");
+        if(isCta) {
+          return field;
+        } else {
+          return false;
+        }
+    });
+    var sortedCta = _.sortBy(cta, 'date');
+    var latestCta = _.last(cta);
+    console.log(latestCta);
+    var sortedEpisodes = _.sortBy(episodes, 'episodeNumber');
+    var latestEpisode = _.last(sortedEpisodes);
     res.render('index', {
       episodes: episodes,
-      latest: latest
+      latest: latestEpisode,
+      cta: latestCta
     });
   });
 

@@ -4,14 +4,29 @@ block content
   header
     nav.nav
       .logo--nav YasGuru
-    .banner__wrapper
+    .banner__wrapper(style="background-image:url('/static/images/yasguru-images/yasmin2.jpg');background-position:50% 30%;")
       .banner__container
         .banner__content
-          h1.banner__heading Stop asking the wrong questions about love and start asking the right ones.
-          p.banner__subheading The keys to successful, lasting relationships aren't secret. Learn what works and doesn't work in a healthy, loving relationship from a successful matchmaker with over a decade of experience.
-          a(href="#signup").btn.banner__button Sign Me Up
+          h1.banner__heading Join me for a live Q
+            span(style="font-size:0.75em;") &
+            | A on Instagram tonight!
+          p.banner__subheading Have burning questions you'd like to ask? Send in your questios via email to yasmin@yasguru.com and don't miss our first Instagram Live session tonight
+          a(href="#signup").btn.banner__button Get Updates
         
   main
+    if cta
+      section
+        .cta-a
+          .cta-a__header
+            .cta-a__image
+              img(src="https://media.giphy.com/media/d9h3F1pFHWM36/giphy.gif", height='150px')
+              div.recording
+            .cta-a__info
+              h4.cta-a__headline #{cta.ctaHeadline}
+              p.cta-a__subheading(style="margin-bottom:0px;")= moment(cta.date).fromNow() + ' | ' +  moment(cta.date).calendar()
+            a.btn.btn--outline.cta-a__button(href="#{cta.link}", target="_blank") #{cta.button}
+          .cta-a__content
+            p.center !{cta.instructions}
     section
       .module.accent-color
         .module-a
