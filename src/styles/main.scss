@@ -483,24 +483,25 @@
     }
     @include e('image') {
       position: relative;
-      margin-left: -80px;
       @media screen and (min-width:$break-small) {
         margin-left: 0;
       }
     }
     @include e('info') {
       z-index: 2;
-      margin-left: -40px;
-      margin-right: 20px;
+      text-align: center;
+      margin-top: -20px;
+      @media screen and (min-width:$break-small) {
+        text-align: left;
+        margin-top: 0px;
+        margin-left: -40px;
+        margin-right: 20px;
+      }
     }
     @include e('button') {
       flex-basis: 200px;
-      margin-top: -30px;
-      margin-bottom: 40px;
       z-index: 2;
-      @media screen and (min-width: $break-small) {
-        margin: 20px;
-      }
+      margin: 15px;
     }
 
     @include e('headline') {

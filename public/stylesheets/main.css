@@ -715,23 +715,24 @@ p {
     align-items: center;
     width: 100%; }
   .cta-a__image {
-    position: relative;
-    margin-left: -80px; }
+    position: relative; }
     @media screen and (min-width: 480px) {
       .cta-a__image {
         margin-left: 0; } }
   .cta-a__info {
     z-index: 2;
-    margin-left: -40px;
-    margin-right: 20px; }
+    text-align: center;
+    margin-top: -20px; }
+    @media screen and (min-width: 480px) {
+      .cta-a__info {
+        text-align: left;
+        margin-top: 0px;
+        margin-left: -40px;
+        margin-right: 20px; } }
   .cta-a__button {
     flex-basis: 200px;
-    margin-top: -30px;
-    margin-bottom: 40px;
-    z-index: 2; }
-    @media screen and (min-width: 480px) {
-      .cta-a__button {
-        margin: 20px; } }
+    z-index: 2;
+    margin: 15px; }
   .cta-a__headline {
     font-size: 1.5em;
     margin-bottom: 5px; }
