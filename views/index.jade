@@ -23,7 +23,7 @@ block content
               div.recording
             .cta-a__info
               h4.cta-a__headline #{cta.ctaHeadline}
-              p.cta-a__subheading(style="margin-bottom:0px;")= moment(cta.date).fromNow() + ' | ' +  moment(cta.date).calendar()
+              p.cta-a__subheading(style="margin-bottom:0px;")= moment.parseZone(cta.date).fromNow() + ' | ' +  moment.parseZone(cta.date).calendar()
             a.btn.btn--outline.cta-a__button(href="#{cta.link}", target="_blank") #{cta.button}
           .cta-a__content
             p.center !{cta.instructions}
