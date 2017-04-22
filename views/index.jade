@@ -4,15 +4,20 @@ block content
   header
     nav.nav
       .logo--nav YasGuru
-    .banner__wrapper(style="background-image:url('/static/images/yasguru-images/yasmin2.jpg');background-position:50% 30%;")
-      .banner__container
-        .banner__content
-          h1.banner__heading Join me for a live Q
-            span(style="font-size:0.75em;") &
-            | A on Instagram tonight!
-          p.banner__subheading Have burning questions you'd like to ask? Send in your questios via email to yasmin@yasguru.com and don't miss our first Instagram Live session tonight
-          a(href="#signup").btn.banner__button Get Updates
-        
+    if banner  
+      .banner__wrapper(style="background-image:url('/static/images/yasguru-images/yasmin2.jpg');background-position:50% 30%;")
+        .banner__container
+          .banner__content
+            h1.banner__heading #{banner.headline}
+            p.banner__subheading #{banner.subheading}
+            a(href="#{banner.link}").btn.banner__button #{banner.button}
+    else
+      .banner__wrapper(style="background-image:url('/static/images/yasguru-images/yasmin2.jpg');background-position:50% 30%;")
+        .banner__container
+          .banner__content
+            h1.banner__heading There's no love lost here.
+            p.banner__subheading Discover the do's and don't's of a successful matchmaker with over 10 years of experience.
+            a(href="#signup").btn.banner__button Learn More
   main
     if cta
       section
