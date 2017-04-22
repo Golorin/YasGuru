@@ -18,6 +18,14 @@ router.get('/', function(req, res, next) {
     // console.log(entries.sys.type);
     var fields = _.pluck(entries.items, 'fields');
     // console.log(fields);
+    var banner = _.filter(fields, function(field) {
+        var isBanner = _.has(field, "headline");
+        if(isBanner) {
+          return field;
+        } else {
+          return false;
+        }
+    });
     var episodes = _.filter(fields, function(field) {
         var isEpisode = _.has(field, "episodeNumber");
         if(isEpisode) {
@@ -34,12 +42,15 @@ router.get('/', function(req, res, next) {
           return false;
         }
     });
+    var sortedBanner = _.sortBy(banner, 'id');
+    var latestBanner = _.last(sortedBanner);
     var sortedCta = _.sortBy(cta, 'date');
     var latestCta = _.last(cta);
     console.log(latestCta);
     var sortedEpisodes = _.sortBy(episodes, 'episodeNumber');
     var latestEpisode = _.last(sortedEpisodes);
     res.render('index', {
+      banner: latestBanner,
       episodes: episodes,
       latest: latestEpisode,
       cta: false
