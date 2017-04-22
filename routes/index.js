@@ -42,7 +42,7 @@ router.get('/', function(req, res, next) {
     res.render('index', {
       episodes: episodes,
       latest: latestEpisode,
-      cta: latestCta
+      cta: false
     });
   });
 
