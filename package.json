@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "dev": "NODE_EN=development nodemon -L ./bin/www",
     "production": "NODE_EN=production node ./bin/www",
-    "heroku-postbuild": "cd client && npm install --only-dev && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
