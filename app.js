@@ -26,7 +26,7 @@ if (process.env.NODE_EN==="production") {
 
 db.on('error', console.error.bind(console, 'error connecting with mongodb database:'));
 
-db.once('open', function() {
+db.once('openUri', function() {
   console.log('connected to mongodb database');
 });
 

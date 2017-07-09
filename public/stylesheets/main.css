@@ -62,7 +62,8 @@ input {
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   font-family: 'Fredoka One', serif;
-  margin-bottom: 1.4em; }
+  margin-bottom: 1.4em;
+  letter-spacing: 0.5px; }
 
 p, span, a {
   line-height: 1.2em;
@@ -544,7 +545,7 @@ p {
     flex-grow: 1; }
 
 .module-c {
-  background: #008F95;
+  background: #152637;
   min-height: 200px;
   width: 100%;
   display: -webkit-box;
