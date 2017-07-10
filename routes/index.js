@@ -11,61 +11,6 @@ var client = contentful.createClient({
 })
 // This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  // client.getEntries()
-  // .then((entries) => {
-  //   // console.log(entries.items);
-  //   // console.log(entries.sys.type);
-  //   var fields = _.pluck(entries.items, 'fields');
-  //   // console.log(fields);
-  //   var banner = _.filter(fields, function(field) {
-  //       var isBanner = _.has(field, "headline");
-  //       if(isBanner) {
-  //         return field;
-  //       } else {
-  //         return false;
-  //       }
-  //   });
-  //   var episodes = _.filter(fields, function(field) {
-  //       var isEpisode = _.has(field, "episodeNumber");
-  //       if(isEpisode) {
-  //         return field;
-  //       } else {
-  //         return false;
-  //       }
-  //   });
-  //   var cta = _.filter(fields, function(field) {
-  //       var isCta = _.has(field, "ctaHeadline");
-  //       if(isCta) {
-  //         return field;
-  //       } else {
-  //         return false;
-  //       }
-  //   });
-  //   var sortedBanner = _.sortBy(banner, 'id');
-  //   var latestBanner = _.last(sortedBanner);
-  //   var sortedCta = _.sortBy(cta, 'date');
-  //   var latestCta = _.last(cta);
-  //   console.log(latestCta);
-  //   var sortedEpisodes = _.sortBy(episodes, 'episodeNumber');
-  //   var latestEpisode = _.last(sortedEpisodes);
-  //   res.render('index', {
-  //     banner: latestBanner,
-  //     episodes: episodes,
-  //     latest: latestEpisode,
-  //     cta: false
-  //   });
-  // });
-
-  if(process.env.NODE_EN === "production") {
-    res.sendFile(path.resolve(__dirname,'..','client/build/index.html'));
-  } else {
-    res.sendFile(path.resolve(__dirname,'..','client/public/index.html'));
-  }
-
-});
-
 router.get('/api/videos/retrieve', function(req, res, next) {
   client.getEntries()
   .then((entries) => {
@@ -157,5 +102,6 @@ router.get('/api/posts/retrieve/:id', function(req, res, next) {
     console.log(err);
   });
 });
+
 
 module.exports = router;
