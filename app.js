@@ -43,6 +43,7 @@ db.on('disconnected', function () {
 
 // Route Declarations
 var index = require('./routes/index');
+var api = require('./routes/api');
 var users = require('./routes/users');
 var subscribe = require('./routes/subscribe');
 
@@ -62,14 +63,10 @@ app.use(cookieParser());
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.use('/', index);
+app.use('/api', api);
 app.use('/users', users);
 app.use('/subscribe', subscribe);
-
-app.get('*', function(req, res, next) {
-  // Serve static index.html in client/build if other routes don't match.
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
