@@ -2,9 +2,13 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
 if (process.env.NODE_EN === "development") {
-  mongoose.createConnection(process.env.MONGODB_DEV_URI);
+  mongoose.createConnection(process.env.MONGODB_DEV_URI, {
+    useMongoClient: true,
+  });
 } else {
-  mongoose.createConnection(process.env.MONGODB_URI);
+  mongoose.createConnection(process.env.MONGODB_URI, {
+    useMongoClient: true,
+  });
 }
 
 var db = mongoose.connection;

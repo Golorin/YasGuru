@@ -19,9 +19,13 @@ if (process.env.NODE_EN === "production") {
 }
 mongoose.Promise = global.Promise;
 if (process.env.NODE_EN==="production") {
-  mongoose.connect(process.env.MONGODB_URI);
+  mongoose.connect(process.env.MONGODB_URI, {
+    useMongoClient: true,
+  });
 } else {
-  mongoose.connect(process.env.MONGODB_DEV_URI);
+  mongoose.connect(process.env.MONGODB_DEV_URI, {
+    useMongoClient: true,
+  });
 }
 
 db.on('error', console.error.bind(console, 'error connecting with mongodb database:'));
@@ -33,10 +37,14 @@ db.once('openUri', function() {
 db.on('disconnected', function () {
    //Reconnect on timeout
    if (process.env.NODE_EN==="production") {
-     mongoose.connect(process.env.MONGODB_URI);
+     mongoose.connect(process.env.MONGODB_URI, {
+       useMongoClient: true,
+     });
      db = mongoose.connection;
    } else {
-     mongoose.connect(process.env.MONGODB_DEV_URI);
+     mongoose.connect(process.env.MONGODB_DEV_URI, {
+       useMongoClient: true,
+     });
      db = mongoose.connection;
    }
 });
