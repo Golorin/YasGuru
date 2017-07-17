@@ -3,6 +3,7 @@ var router = express.Router();
 var path = require('path');
 var _ = require('underscore');
 var contentful = require('contentful');
+var cache = require('../src/middleware/mcache');
 var client = contentful.createClient({
   // This is the space ID. A space is like a project folder in Contentful terms
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -11,7 +12,7 @@ var client = contentful.createClient({
 })
 // This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
 
-router.get('/videos/retrieve', function(req, res, next) {
+router.get('/videos/retrieve', cache(3600), function(req, res, next) {
   client.getEntries()
   .then((entries) => {
     // console.log(entries.items);
@@ -46,7 +47,7 @@ router.get('/videos/retrieve', function(req, res, next) {
     var latestBanner = _.last(sortedBanner);
     var sortedCta = _.sortBy(cta, 'date');
     var latestCta = _.last(cta);
-    console.log(latestCta);
+    // console.log(latestCta);
     var sortedEpisodes = _.sortBy(episodes, 'episodeNumber');
     var latestEpisode = _.last(sortedEpisodes);
     console.log(sortedEpisodes);
@@ -66,31 +67,46 @@ router.get('/posts/retrieve', function(req, res, next) {
   }).then((entries) => {
     // Map Only the fields for the post we need to an array.
     var posts = _.map(entries.items, function(item) {
-      console.log("ITEM: ", item);
       // Entry identifying items are within the item.sys object.
-      var id = item.sys.id;
-      var createdAt = item.sys.createdAt;
-      var updatedAt = item.sys.updatedAt;
+      var { id, createdAt, updatedAt } = item.sys;
+
       // Entry content is within the item.fields object.
       // Use the getter in the response object to set the CategoriesList variable to iterate through and add to a new array which will be included in an extend of the post object.
       var categoriesList = item.fields.categories;
       var categories = _.map(categoriesList, function(category) {
         return category.fields.categoryName;
       });
-      var post = _.extend(item.fields, {
+
+      var image = {
+        url: item.fields.cover.fields.file.url,
+        title: item.fields.cover.fields.title,
+      }
+      var author = item.fields.author.fields.name;
+
+      var post = Object.assign({}, {
+        title: item.fields.title,
+        post: item.fields.post,
         category: categories,
-        id: id,
+        id,
         createdAt,
         updatedAt,
+        image,
+        author,
       });
       // Return the post data with the categories included under "category" property.
       return post;
     });
 
-    console.log("Here are the posts: ", posts);
     res.json(posts)
   }).catch(function(err) {
     console.log(err);
+  });
+});
+
+router.get('/sample', function(req, res, next) {
+  client.getEntries()
+  .then((entries) => {
+    res.json(entries.items[0]);
   });
 });
 

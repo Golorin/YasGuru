@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "dev": "NODE_EN=development nodemon -L ./bin/www",
     "production": "NODE_EN=production node ./bin/www",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm install && npm run build && npn start"
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm install && npm run build && npm start"
   },
   "cacheDirectories": [
     "node_modules",
@@ -27,6 +27,7 @@
     "express": "~4.14.0",
     "express-validator": "^3.1.2",
     "jade": "~1.11.0",
+    "memory-cache": "^0.2.0",
     "moment": "^2.18.1",
     "mongodb": "^2.2.25",
     "mongoose": "^4.9.2",
@@ -36,6 +37,8 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
+    "chai": "^4.1.0",
+    "chai-http": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.1",

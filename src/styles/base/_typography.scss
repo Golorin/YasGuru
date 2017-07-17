@@ -16,17 +16,14 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.5px;
 }
 
-p, span, a {
-  line-height: 1.2em;
+p, span, a, ul, li {
+  font-size: 1.0em;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.5px;
   line-height: 1.3em;
 }
 
-p {
-  font: 1em;
-  line-height: 1.3em;
-  font-weight: 500;
+p, ul, li {
   margin-bottom: 1.2em;
 }
 
