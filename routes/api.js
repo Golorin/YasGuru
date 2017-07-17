@@ -50,7 +50,7 @@ router.get('/videos/retrieve', cache(3600), function(req, res, next) {
     // console.log(latestCta);
     var sortedEpisodes = _.sortBy(episodes, 'episodeNumber');
     var latestEpisode = _.last(sortedEpisodes);
-    console.log(sortedEpisodes);
+    // console.log(sortedEpisodes);
 
     res.json({
       episodes: sortedEpisodes
