@@ -34,11 +34,13 @@ gulp.task('sass', function() {
   return gulp.src('src/styles/main.scss')
     .pipe(sass())
     .pipe(gulp.dest('public/stylesheets'))
+    .pipe(gulp.dest('client/public/stylesheets'))
     .pipe(autoprefixer({
         browsers: ['> 5%'],
         cascade: false
     }))
-    .pipe(gulp.dest('public/stylesheets'));
+    .pipe(gulp.dest('public/stylesheets'))
+    .pipe(gulp.dest('client/public/stylesheets'));
 });
 
 // Concatenate & Minify JS
