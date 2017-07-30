@@ -3,7 +3,7 @@ var router = express.Router();
 var path = require('path');
 var _ = require('underscore');
 var contentful = require('contentful');
-var cache = require('../../src/middleware/mcache');
+// var cache = require('../../src/middleware/mcache');
 var client = contentful.createClient({
   // This is the space ID. A space is like a project folder in Contentful terms
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -12,7 +12,7 @@ var client = contentful.createClient({
 })
 // This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
 
-router.get('/videos/retrieve', cache(3600), function(req, res, next) {
+router.get('/videos/retrieve', function(req, res, next) {
   client.getEntries()
   .then((entries) => {
     // console.log(entries.items);
