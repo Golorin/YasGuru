@@ -236,11 +236,12 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  if(process.env.NODE_EN==="development") {
-    res.render('error')
-  } else {
-    res.redirect('/');
-  }
+  res.render('error')
+  // if(process.env.NODE_EN==="development") {
+  //   res.render('error')
+  // } else {
+  //   res.redirect('/');
+  // }
 
 });
 
