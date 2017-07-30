@@ -170,6 +170,10 @@ app.get('/api/posts/retrieve', function(req, res, next) {
     res.json(posts)
   }).catch(function(err) {
     console.log(err);
+    res.status(400).json({
+      statusCode: 400,
+      message: "There was an error fetching the videos."
+    });
   });
 });
 
@@ -177,6 +181,11 @@ app.get('/api/sample', function(req, res, next) {
   client.getEntries()
   .then((entries) => {
     res.json(entries.items[0]);
+  }).catch((err) => {
+    res.status(400).json({
+      statusCode: 400,
+      message: "There was an error fetching the samples."
+    });
   });
 });
 
@@ -209,7 +218,7 @@ app.post('/subscribe', function(req, res, next) {
 
 app.get('*', function(req, res, next) {
   // Serve static index.html in client/build if other routes don't match.
-  res.sendFile(path.resolve(__dirname,'..','/client/build/index.html'));
+  res.sendFile(path.resolve(__dirname,'../client/build','index.html'));
 });
 
 // catch 404 and forward to error handler
