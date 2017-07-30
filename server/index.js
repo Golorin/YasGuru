@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 var db = mongoose.connection;
 var _ = require('underscore');
 var User = require('../src/models/newsletter');
-var cache = require('../src/middleware/mcache');
+// var cache = require('../src/middleware/mcache');
 
 // Interact with Contentful CMS
 var contentful = require('contentful');
@@ -82,7 +82,7 @@ app.use(express.static(path.resolve(__dirname,'..','client/build')));
 
 // This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
 
-app.get('/api/videos/retrieve', cache(3600), function(req, res, next) {
+app.get('/api/videos/retrieve', function(req, res, next) {
   client.getEntries()
   .then((entries) => {
     // console.log(entries.items);
