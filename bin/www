@@ -18,7 +18,7 @@ if(cluster.isMaster) {
 
 } else {
   // Code to run if we're in a worker process
-  var app = require('../app');
+  var app = require('../server');
   var debug = require('debug')('yasguru:server');
   var http = require('http');
 

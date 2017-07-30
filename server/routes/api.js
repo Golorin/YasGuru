@@ -3,7 +3,7 @@ var router = express.Router();
 var path = require('path');
 var _ = require('underscore');
 var contentful = require('contentful');
-var cache = require('../src/middleware/mcache');
+var cache = require('../../src/middleware/mcache');
 var client = contentful.createClient({
   // This is the space ID. A space is like a project folder in Contentful terms
   space: process.env.CONTENTFUL_SPACE_ID,
